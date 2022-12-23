@@ -1,0 +1,31 @@
+.headerContainer1{
+    display: flex;
+    
+    backdrop-filter: blur(50px) saturate(120%) contrast(200%);
+    
+}
+.headerBody1{
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.headerBody2{
+    padding-left: 39%;
+    padding-top: 14px;
+    display: flex;
+    justify-content: space-between;
+    
+    /* font-weight: 900;
+    font-size: larger; */
+}
+.color{
+    color:aliceblue;
+}
+.logo{
+    display: flex;
+    text-align: center;
+}
+.size{
+    font-size: 13px;
+}

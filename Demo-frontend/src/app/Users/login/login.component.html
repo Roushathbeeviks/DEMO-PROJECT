@@ -1,0 +1,12 @@
+ <div class="login">
+    <form [formGroup]="LoginForm" (ngSubmit)="submit()">
+      <img src="../../assets/MicrosoftTeams-image.png"><br>
+         <!-- <label for="username">Username</label> -->
+       <input formControlName="Userid" type="text " id="Userid" placeholder="USERNAME"/>&nbsp;
+       <input formControlName="password"  type="password " id="password" placeholder="PASSWORD"/>&nbsp;
+       <button type="submit" class=" btn" >LOGIN</button>
+       <hr >
+       <a  class="pass" routerLink="/forgotpassword">Forgot password</a>
+       <button (click)="getUsers()">hii</button>
+    </form>
+</div>
