@@ -35,9 +35,9 @@ const userTasks = {
     });
   },
 
-getUserByFields:(email,password,role) => {
-  const param = [email];
-  const query="select Userid,email,password,role from users where email = ?"
+  getUserByUserid:(Userid) => {
+  const param = [Userid];
+  const query="select Userid,email,password,role from users where Userid = ?"
   return new Promise((resolve, reject) => {
     connection.query(query,param,(error,results)=>{
       if(error){
