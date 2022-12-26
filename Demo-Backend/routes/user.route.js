@@ -30,6 +30,13 @@ router.post("/signup", function (req, res) {
   userService.doCreate(req, res);
 });
 
+router.post("/Checkemail", function (req, res) {
+  userService.CheckEmail(req,res)
+})
+router.post("/checkId", function (req, res) {
+  userService.CheckId(req,res)
+})
+
 router.post("/login", function (req, res) {
   userService.doLogin(req, res);
   

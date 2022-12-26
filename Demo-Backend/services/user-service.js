@@ -11,7 +11,7 @@ var bcrypt = require('bcrypt')
 const userService = {
   doCreate: (req, res) => {
     let users = req.body;
-    console.log(users);
+    // console.log(users);
     userTasks
       .getUserByEmailId(users.email)
       .then((user) => {
@@ -33,6 +33,46 @@ const userService = {
       });
   },
 
+  CheckEmail: (req, res) => {
+    let users = req.body;
+    // console.log(users);
+    userTasks
+      .getUserByEmailId(users.email)
+      .then((user) => {
+        if (user.length > 0) {
+          // return res.status(200).json("User already exists");
+          res.send({message:"Email id already exists",status:true})
+        } else {
+        res.send({message:"Email id does not exist",status:false})
+        }
+      })
+      .catch((error) => {
+        // return res.status(500).json("Internal server error:" + error);
+        res.send({message:"Internal server error:" + error})
+      });
+  },
+
+  CheckId: (req, res) => {
+    let users = req.body;
+    // console.log(users);
+    userTasks
+      .getUserByUserid(users.Userid)
+      .then((user) => {
+        if (user.length > 0) {
+          // return res.status(200).json("User already exists");
+          res.send({message:"User name already exists",status:true})
+        } else {
+        res.send({message:"User name does not exist",status:false})
+        }
+      })
+      .catch((error) => {
+        // return res.status(500).json("Internal server error:" + error);
+        res.send({message:"Internal server error:" + error})
+      });
+  },
+
+
+
   doLogin: (req, res) => {
     let user = req.body;
     userTasks
@@ -43,14 +83,18 @@ const userService = {
           // return res
           //   .status(401)
           //   .json({Message:"Incorrect Username or password"});
-          res.send({message: "Invalid username or password"})
+          res.send({message:"Invalid username or password",status:false})
         } else if (users[0].password == user.password) {
           const response = { userid: users[0].Userid, role: users[0].role };
           const accesstoken = jwt.sign(response, process.env.ACCCESS_TOKEN, {
             expiresIn: "8h",
           });
+          userTasks.getUserByUserid(response.userid).then((users) => {
+            console.log(users);
+            res.status(200).json({token: accesstoken,Detail:users[0].role,status:true});
+          })
             // res.status(200).json({token: accesstoken});
-            res.status(200).json({Message:response.role})
+            // res.status(200).json({Message:response.role})
             console.log(users[0].role)
         } else {
           res.send({message: "something went wrong"})
@@ -89,7 +133,7 @@ GetAllDetails:(req, res)=>
       res.send(err)
     }
   });
+},
 }
 
-};
 module.exports = userService;

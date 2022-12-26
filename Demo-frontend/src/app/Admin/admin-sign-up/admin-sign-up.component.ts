@@ -17,6 +17,10 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class AdminSignUpComponent implements OnInit {
   signup: any = FormGroup;
+  UsernameCheckmsg:string=""
+  EmailCheckmsg:string=""
+  status:boolean=true
+
   constructor(
     private route: Router,
     private formBuider: FormBuilder,
@@ -28,8 +32,43 @@ export class AdminSignUpComponent implements OnInit {
     // console.log('signed up');
     // if()
     this.adminserv.SignupUser(this.signup.value).subscribe((res) => {
-      console.log(res);
+      // console.log(res);
     });
+  }
+
+  CheckEmail()
+  {
+    this.adminserv.CheckEmail(this.signup.value).subscribe((res:any) => {
+    if(res.status==true)
+    {
+      this.EmailCheckmsg=res?.message
+      // reload()
+    }
+    else{
+      this.EmailCheckmsg = ""
+    }
+    
+    })
+  }
+  CheckId(e:any)
+  {
+
+    this.adminserv.CheckId(this.signup.value).subscribe((res:any) => {
+      console.log(res)
+      if(res.status==true)
+      {
+        this.UsernameCheckmsg = res?.message;
+      }
+      else{
+        this.UsernameCheckmsg = ""
+      }
+    }
+    )
+  
+  }
+  reload()
+  {
+
   }
 
   ngOnInit(): void {

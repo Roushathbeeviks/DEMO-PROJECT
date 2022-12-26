@@ -22,7 +22,7 @@ const userTasks = {
     });
   },
 
-  getUserByEmailId: (email) => {
+getUserByEmailId: (email) => {
     const param = [email];
     const query = `SELECT * FROM users WHERE email = ?;`;
     return new Promise((resolve, reject) => {

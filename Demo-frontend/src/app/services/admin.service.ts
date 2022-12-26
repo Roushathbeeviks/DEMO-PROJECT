@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -14,8 +14,21 @@ export class AdminService {
     return this.http.post(this.URL + '/user/signup', data);
   }
 
+CheckEmail(data:any)
+{
+  return this.http.post(this.URL +'/user/Checkemail',data)
+}
+
+CheckId(data:any)
+{
+  return this.http.post(this.URL +'/user/CheckId',data)
+}
+
   Login(data:any){
-    return this.http.post(this.URL +'/user/login',data);
+    return this.http.post(this.URL +'/user/login',data,{
+      observe: 'body',
+      headers: new HttpHeaders().append('Content-Type', 'application/json')
+    });
   }
 
   ForgotPassword(data:any)

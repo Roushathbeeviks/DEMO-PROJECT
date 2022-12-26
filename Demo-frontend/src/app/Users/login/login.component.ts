@@ -1,6 +1,12 @@
 import { Token } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { FormControl,FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormBuilder,
+  FormGroup,
+  Validators,
+  NgForm,
+} from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
 import { LandingPageComponent } from '../landing-page/landing-page.component';
@@ -12,56 +18,92 @@ import { LandingPageComponent } from '../landing-page/landing-page.component';
 })
 export class LoginComponent implements OnInit {
   LoginForm: any = FormGroup;
-  arr:any= [];
+  arr: any = [];
+  public msg: any = [];
+  public avail: boolean = true;
 
-  constructor(private route: Router, private adminserv: AdminService,private formBuider:FormBuilder) {}
+  constructor(
+    private route: Router,
+    private adminserv: AdminService,
+    private formBuider: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     this.LoginForm = this.formBuider.group({
       Userid: [null, [Validators.required]],
       password: [null, [Validators.required]],
     });
-    this.getUsers()
+    // this.getUsers()
   }
 
-getUsers()
-{
-  this.adminserv.AllUsers().subscribe((res)=>
-  {
-    // console.log(res);
-    // this.arr = res.valueOf();
-    console.log(res);
-    // this.arr=res
-    console.log(typeof this.arr)
-  })
-}
-
+  getUsers() {
+    this.adminserv.AllUsers().subscribe((res) => {
+      console.log(res);
+      // this.arr = res.valueOf();
+      // console.log(res);
+      // this.arr=res
+      // console.log(typeof this.arr)
+    });
+  }
 
   submit() {
     var formData = this.LoginForm.value;
-    var data={
-      Userid:formData.Userid,
-      password: formData.password
-    }
+    var data = {
+      Userid: formData.Userid,
+      password: formData.password,
+    };
 
     for (var val of this.arr) {
       var a = val['Userid'];
-      var b=data.Userid;
+      var b = data.Userid;
       var c = val['password'];
-      var d = data.password;;
+      var d = data.password;
       var e = val['role'];
-      var f="admin"
+      var f = 'admin';
     }
-    console.log(a)
-    console.log(b)
+    // console.log(a)
+    // console.log(b)
 
-    this.adminserv.Login(data).subscribe((res)=>
-    {
-      console.log(res)
-      JSON.stringify(res)
-      console.log( typeof res)
-      alert(res);
-    })
-   
+    this.adminserv.Login(data).subscribe((res: any) => {
+      if (res.status) {
+        let role = res.Detail;
+        if (role == 'admin') {
+          this.route.navigate(['/adminLand']);
+        } else {
+          this.route.navigate(['/land']);
+        }
+      } else {
+        this.msg = res?.message;
+        console.log(this.msg);
+      }
+    });
   }
 }
+
+// submit() {
+//   var formData = this.LoginForm.value;
+//   var data={
+//     Userid:formData.Userid,
+//     password: formData.password
+//   }
+
+//   for (var val of this.arr) {
+//     var a = val['Userid'];
+//     var b=data.Userid;
+//     var c = val['password'];
+//     var d = data.password;;
+//     var e = val['role'];
+//     var f="admin"
+//   }
+//   // console.log(a)
+//   // console.log(b)
+
+//   this.adminserv.Login(JSON.stringify(data)).subscribe((res)=>
+//   {
+//     console.log(res)
+//     // JSON.stringify(res)
+//     console.log( typeof res)
+//     // alert(message);
+//   })
+
+// }
