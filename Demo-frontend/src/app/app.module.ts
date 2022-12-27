@@ -27,6 +27,7 @@ import { ForgotpasswordComponent } from './Users/forgotpassword/forgotpassword.c
 import { LogoutComponent } from './logout/logout.component';
 
 import {MatDialogModule} from '@angular/material/dialog';
+import { VoyagePlanComponent } from './admin/voyage-plan/voyage-plan.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     AdminHeaderComponent,
     ForgotpasswordComponent,
     LogoutComponent,
+    VoyagePlanComponent,
   
   ],
   imports: [

@@ -15,10 +15,11 @@
     color: aliceblue;
     border: none;
     font-size: 10px;
+ 
     min-width: 50px;
     min-height: 22px;
     align-items: center; 
-    padding-top: 2px;
+    padding-top: 4px;
 }
 /* .loginform{
     padding-top: 10px;
@@ -35,4 +36,7 @@
     color: red;
     font-weight: 50%;
     font-size: 15px;
+}
+.mat-dialog-container{
+    background-color: black;
 }
