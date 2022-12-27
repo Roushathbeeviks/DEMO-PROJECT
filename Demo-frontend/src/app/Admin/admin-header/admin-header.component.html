@@ -1,0 +1,82 @@
+<div class="headerContainer1">
+   
+    <div class="headerBody1">
+            <img src="../../assets/MicrosoftTeams-image.png">&nbsp;&nbsp;&nbsp;
+            <a class="color">
+                <div class="logo">
+                    <i class="material-icons">travel_explore</i>
+                </div>
+                <div class="size">MY FLEET</div>
+            </a>&nbsp;&nbsp;&nbsp;
+            <a class="color " >
+                 <div class="logo"> <i class="material-icons">analytics</i></div>
+                 <div class="size">SMART ANALYTICS</div>
+            </a>&nbsp;&nbsp;
+            <a class="color">
+                <div class="logo"><i class="material-icons">class</i></div>
+                <div class="size">CHARTER PARTY</div>
+            </a>&nbsp;&nbsp;
+            <a class="color">
+                <div class="logo"><i class="material-icons">class</i></div>
+                <div class="size">CPQ</div>
+            </a>&nbsp;&nbsp;&nbsp;
+            <a class="color">
+                <div class="logo"><i class="material-icons">precision_manufacturing</i></div>
+                <div class="size">HULL PERFORMANCE</div>
+            </a>&nbsp;&nbsp;
+            <a class="color">
+                <div class="logo"><i class="material-icons">share_location</i></div>
+                <div class="size">GEOFENCING</div>
+            </a>&nbsp;&nbsp;&nbsp;
+            <a class="color">
+                <div class="logo"><i class="material-icons">psychology_alt</i></div>
+                <div class="size">ASSET AI</div>
+            </a>&nbsp;&nbsp;
+            <a class="color">
+                <div class="logo"><i class="material-icons">thermostat</i></div>
+                <div class="size">TFDC</div>
+            </a>&nbsp;
+            
+    </div>
+    <div class="headerBody3 color">
+        <a routerLink="/adminSignUp" class="color">
+            <div>Add User</div>
+        </a>&nbsp;&nbsp;&nbsp;
+        <a mat-button [matMenuTriggerFor]="afterMenu" [routerLinkActive]="['active']">View</a>
+        <mat-menu #afterMenu="matMenu" xPosition="after">
+          <button mat-menu-item>View Users</button>
+          <button mat-menu-item>View Assets</button>
+          <button mat-menu-item>View Vessels</button>
+          <button mat-menu-item>Voyage Plan</button>
+        </mat-menu>
+    </div>
+    <div class="headerBody2">
+        <a href="#" class="color">
+            <div>
+                <i class="material-icons">settings</i>
+            </div>
+        </a>&nbsp;&nbsp;&nbsp;
+        <a href="#" class="color">
+            <div>
+                <i class="material-icons">search</i>
+            </div>
+        </a>&nbsp;&nbsp;&nbsp;
+        <a href="#" class="color">
+            <div>
+                <mat-icon>help_outline</mat-icon>
+            </div>
+        </a>&nbsp;&nbsp;&nbsp;
+        <a  routerLinkActive="active" href="#" class="color">
+            <div><mat-icon>sms</mat-icon></div>
+         </a>&nbsp;&nbsp;&nbsp;
+         <a mat-button [matMenuTriggerFor]="menu" class="color">
+            <mat-icon>person</mat-icon>
+        </a>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Edit Profile</button>
+            <button mat-menu-item (click)="openDialog()">Log Out</button>
+       </mat-menu>&nbsp;&nbsp;&nbsp;
+       </div>
+    
+</div>
+
