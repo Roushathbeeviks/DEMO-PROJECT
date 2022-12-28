@@ -10,6 +10,7 @@ import { Validators } from '@angular/forms';
 import { SignupService } from 'src/app/services/signup.service';
 import { AdminService } from 'src/app/services/admin.service';
 
+
 @Component({
   selector: 'app-admin-sign-up',
   templateUrl: './admin-sign-up.component.html',
@@ -24,15 +25,14 @@ export class AdminSignUpComponent implements OnInit {
   constructor(
     private route: Router,
     private formBuider: FormBuilder,
-    private adminserv: AdminService
+    private adminserv: AdminService,
+
   ) {}
 
   check() {
     console.log(this.signup.value);
-    // console.log('signed up');
-    // if()
-    this.adminserv.SignupUser(this.signup.value).subscribe((res) => {
-      // console.log(res);
+    this.adminserv.SignupUser(this.signup.value).subscribe((res:any) => {
+      console.log(res.message);
     });
   }
 
@@ -45,6 +45,7 @@ export class AdminSignUpComponent implements OnInit {
       // reload()
     }
     else{
+      this.status=false
       this.EmailCheckmsg = ""
     }
     
@@ -60,15 +61,12 @@ export class AdminSignUpComponent implements OnInit {
         this.UsernameCheckmsg = res?.message;
       }
       else{
+        this.status=false
         this.UsernameCheckmsg = ""
       }
     }
     )
   
-  }
-  reload()
-  {
-
   }
 
   ngOnInit(): void {

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { LogoutComponent } from 'src/app/logout/logout.component';
 
 @Component({
   selector: 'app-header',
@@ -7,12 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   check=false;
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
   show(){
     this.check=true;
+  }
+  openDialog(){
+    this.dialog.open(LogoutComponent, {
+        
+    });
   }
 
 }

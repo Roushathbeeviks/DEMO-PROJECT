@@ -11,7 +11,7 @@ export class AdminService {
   constructor(private http: HttpClient) {}
 
   SignupUser(data: any) {
-    return this.http.post(this.URL + '/user/signup', data);
+    return this.http.post(this.URL +'/user/signup', data);
   }
 
 CheckEmail(data:any)

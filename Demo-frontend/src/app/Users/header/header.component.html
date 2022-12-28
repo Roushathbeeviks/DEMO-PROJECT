@@ -57,11 +57,13 @@
         <a href="#" class="color">
             <div><mat-icon>sms</mat-icon></div>
          </a>&nbsp;&nbsp;&nbsp;
-        <a  class="color" type="button" > 
-            <div>
-                <mat-icon>person</mat-icon>
-            </div>
-        </a>&nbsp;&nbsp;&nbsp;
+         <a mat-button [matMenuTriggerFor]="menu" class="color">
+            <mat-icon>person</mat-icon>
+        </a>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>Edit Profile</button>
+            <button mat-menu-item (click)="openDialog()">Log Out</button>
+       </mat-menu>&nbsp;&nbsp;&nbsp;
     </div>
     
 </div>

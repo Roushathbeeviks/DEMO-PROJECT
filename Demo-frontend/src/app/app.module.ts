@@ -24,6 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {MatRadioModule} from '@angular/material/radio';
 import { ForgotpasswordComponent } from './Users/forgotpassword/forgotpassword.component';
+import { LogoutComponent } from './logout/logout.component';
+
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { ForgotpasswordComponent } from './Users/forgotpassword/forgotpassword.c
     //LandComponent,
     AdminLandComponent,
     AdminHeaderComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    LogoutComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -52,7 +57,8 @@ import { ForgotpasswordComponent } from './Users/forgotpassword/forgotpassword.c
     ReactiveFormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

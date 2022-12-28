@@ -3,16 +3,17 @@
           <app-admin-header></app-admin-header>
       </div>
       <div class="login">
-        <form [formGroup]="signup" (ngSubmit)="check()">
+        <form [formGroup]="signup" (ngSubmit)="check()" autocomplete="off">
           <!-- <img style="height:50px;" src="../../assets/MicrosoftTeams-image.png"><br> -->   
             <div>
               <input formControlName="Userid" class="input" type="text" id="Userid"   placeholder="Username" (keypress)="CheckId($event)"/>
                 <div class="errors" *ngIf="Userid.errors?.['required'] && Userid.touched">UserID is required</div>
                 <div class="errors" *ngIf="Userid.errors?.['minlength'] && Userid.touched">User ID should have minimum length</div>
-            </div>&nbsp;    
-            <div  style="color: red;" >
-              <h3>{{UsernameCheckmsg}}</h3>
-              </div>       
+                <div  class="errors" *ngIf="status==false">{{UsernameCheckmsg}}</div> 
+          
+            </div>&nbsp; 
+           
+                   
             <div>
                <input formControlName="firstname" class="input" type="text" id="firstname" placeholder="First Name"/>
                 <div class="errors" *ngIf="firstname.errors?.['required'] && firstname.touched">
@@ -35,10 +36,9 @@
                 Email is required
                 </div>
                 <div class="errors" *ngIf="email.errors?.['email'] && email.touched">Enter valid email</div>
+                <div *ngIf="status==false" class="errors" >{{EmailCheckmsg}}</div>
             </div>&nbsp;
-            <div *ngIf="status" style="color: red;" >
-            <h3>{{EmailCheckmsg}}</h3>
-            </div>
+           
             <div>
               <input formControlName="contactnumber" class="input" type="number" id="contactnumber" placeholder="Contact Number"/>
                <div class="errors" *ngIf="contactnumber.errors?.['required'] && contactnumber.touched">
