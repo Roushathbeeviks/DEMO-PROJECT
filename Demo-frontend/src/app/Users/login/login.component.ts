@@ -53,23 +53,18 @@ export class LoginComponent implements OnInit {
       password: formData.password,
     };
 
-    for (var val of this.arr) {
-      var a = val['Userid'];
-      var b = data.Userid;
-      var c = val['password'];
-      var d = data.password;
-      var e = val['role'];
-      var f = 'admin';
-    }
-    // console.log(a)
-    // console.log(b)
-
     this.adminserv.Login(data).subscribe((res: any) => {
       if (res.status) {
         let role = res.Detail;
         if (role == 'admin') {
+          localStorage.setItem('username',data.Userid);
+          localStorage.setItem('token', res['token']);
+          localStorage.setItem('Role', 'Admin');
           this.route.navigate(['/adminLand']);
         } else {
+          localStorage.setItem('token', res['token']);
+          localStorage.setItem('username',data.Userid);
+          localStorage.setItem('Role', 'User');
           this.route.navigate(['/land']);
         }
       } else {

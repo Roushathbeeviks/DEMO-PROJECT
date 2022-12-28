@@ -1,12 +1,13 @@
 <div class="logoutContatiner">
-    <h1 class="family" >Do you want to Log Out</h1>
+    <h1 class="family" >SIGN OUT</h1>
+    <p>Would you like to sign out from SMARTSHIP?</p>
     <hr>
     </div>
     <div class="logoutBody">
     <div mat-dialog-actions>
-      <button  mat-dialog-close class="btn2">Close</button>
+      <button  mat-dialog-close class="btn2">NO,cancel</button>
       <div class="move">
-        <button mat-dialog-close class="btn1" routerLink="/">LogOut</button>
+        <button mat-dialog-close class="btn1" routerLink="/" (click)="LogoutUser()">YES,Sign out</button>
         </div>
     </div>
     </div>

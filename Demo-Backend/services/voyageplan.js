@@ -33,7 +33,7 @@ const VoyagePlan = {
     var query = "select StartPortname,DestinationPortname from voyagepath";
     connection.query(query, (err, results) => {
       if (results) {
-        res.send({ message: results });
+        res.send(results);
       } else {
         res.send({ message: err });
       }

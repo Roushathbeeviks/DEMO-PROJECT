@@ -204,3 +204,33 @@ doLogin: (req, res) => {
 }
 })
 }
+
+
+
+//EDIT PROFILE
+
+ //   UpdateUser:(Userid,
+  //     firstname,
+  //     lastname,
+  //     email,
+  //     contactnumber
+  // ) => {
+  //     var query="update users set firstname=?,lastname=?,email=?,contactnumber=? where Userid=?"
+  //     const param = [
+  //       Userid,
+  //       firstname,
+  //       lastname,
+  //       email,
+  //       contactnumber
+
+  //     ];
+
+  //     return new Promise((resolve, reject) => {
+  //       connection.query(query, param, function (error, results) {
+  //         if (error) reject(error);
+  //         console.log(error);
+  //         resolve(true);
+
+  //       });
+  //     });
+  //   },

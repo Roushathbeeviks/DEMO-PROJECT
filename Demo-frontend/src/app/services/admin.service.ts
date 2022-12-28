@@ -11,32 +11,33 @@ export class AdminService {
   constructor(private http: HttpClient) {}
 
   SignupUser(data: any) {
-    return this.http.post(this.URL +'/user/signup', data);
+    return this.http.post(this.URL + '/user/signup', data);
   }
 
-CheckEmail(data:any)
-{
-  return this.http.post(this.URL +'/user/Checkemail',data)
-}
+  CheckEmail(data: any) {
+    return this.http.post(this.URL + '/user/Checkemail', data);
+  }
 
-CheckId(data:any)
-{
-  return this.http.post(this.URL +'/user/CheckId',data)
-}
+  CheckId(data: any) {
+    return this.http.post(this.URL + '/user/CheckId', data);
+  }
 
-  Login(data:any){
-    return this.http.post(this.URL +'/user/login',data,{
+  Login(data: any) {
+    return this.http.post(this.URL + '/user/login', data, {
       observe: 'body',
-      headers: new HttpHeaders().append('Content-Type', 'application/json')
+      headers: new HttpHeaders().append('Content-Type', 'application/json'),
     });
   }
 
-  ForgotPassword(data:any)
+  GetLoginDetails()
   {
-    return this.http.post(this.URL+'/user/forgotpassword',data);
+    return this.http.get(this.URL + '/user//getlogin')
   }
-  AllUsers()
-  {
-    return this.http.get(this.URL+'/user/getallusers')
+
+  ForgotPassword(data: any) {
+    return this.http.post(this.URL + '/user/forgotpassword', data);
+  }
+  AllUsers() {
+    return this.http.get(this.URL + '/user/getallusers');
   }
 }

@@ -7,9 +7,11 @@ const userTasks = require("../task/user.task");
 var auth = require("../services/Authentication");
 var checkrole = require("../services/checkRole");
 const PasswordService = require("../services/PasswordService");
+const jwt = require('jsonwebtoken')
 
 
 // function verifyToken(req, res, next) {
+//   // console.log(req.headers.Authorization)
 //   if (!req.headers.authorization) {
 //       return res.status(401).send("unauthorized req")
 //   }
@@ -39,15 +41,20 @@ router.post("/checkId", function (req, res) {
 
 router.post("/login", function (req, res) {
   userService.doLogin(req, res);
-  
-  
 });
+
+router.get("/getlogin", function (req, res) {
+  userService.GetRole(req, res)
+})
 
 router.post("/forgotpassword", function (req, res) {
   PasswordService.ForgotPassword(req, res);
 });
+ router.post("/editprofile", function (req, res) {
+  userService.EditUserProfile(req,res)
+ })
 
-//GET USER DETAILS_ ROEL=USER
+//GET USER DETAILS_ ROLE=USER
 router.get("/getusers", (req, res) => {
   userService.GetUserDetails(req, res);
 });

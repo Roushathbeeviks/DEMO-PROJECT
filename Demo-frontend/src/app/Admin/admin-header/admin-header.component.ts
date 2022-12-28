@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LogoutComponent } from 'src/app/logout/logout.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { VoyageplanService } from 'src/app/services/voyageplan.service';
 
 
 
@@ -11,15 +12,16 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./admin-header.component.css']
 })
 export class AdminHeaderComponent implements OnInit {
-  options:any=[]
+  options:any[]=[]
 
-  constructor(private route:Router,private dialog: MatDialog) { }
+  constructor(private route:Router,private dialog: MatDialog,private voyageserv:VoyageplanService) { }
 
   ngOnInit(): void {
     // this.voyageserv.GetVoyagePath().subscribe((res:any)=>
     // {
-    //   // console.log(res);
-    //   this.options=res.message[0]
+  
+    //   this.options=res
+    //   console.log(typeof this.options )
     //   console.log(this.options);
     // })
   }
