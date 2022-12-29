@@ -40,3 +40,7 @@
 .mat-dialog-container{
     background-color: black;
 }
+/* .background-tint {
+    background-color: rgba(200,100,0,.5);
+    background-blend-mode: multiply;
+  } */

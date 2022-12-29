@@ -1,13 +1,14 @@
  <div class="login">
     <form [formGroup]="LoginForm" (ngSubmit)="submit()" autocomplete="off" class="login">
-      <img src="../../assets/MicrosoftTeams-image.png"><br>
-         <div> 
+      
+         <div>
+            <img src="../../assets/MicrosoftTeams-image.png"><br>
        <input class="input" formControlName="Userid" type="text " id="Userid" placeholder="USERNAME"/>&nbsp;
        <input class="input" formControlName="password"  type="password " id="password" placeholder="PASSWORD"/>&nbsp;
        <button type="submit" class=" btn" >LOGIN</button>
        <hr >
-      </div>
-      <div for="username" class="errors">{{msg}}</div>
+       <div for="username" class="errors">{{msg}}</div>
        <a  class="pass" routerLink="/forgotpassword">Forgot password</a>
+       </div>
     </form>
 </div>

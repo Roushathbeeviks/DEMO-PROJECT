@@ -27,7 +27,10 @@ import { ForgotpasswordComponent } from './Users/forgotpassword/forgotpassword.c
 import { LogoutComponent } from './logout/logout.component';
 
 import {MatDialogModule} from '@angular/material/dialog';
-import { VoyagePlanComponent } from './admin/voyage-plan/voyage-plan.component';
+import { VoyagePlanComponent } from './Admin/voyage-plan/voyage-plan.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import { VoyageFormsComponent } from './Admin/voyage-forms/voyage-forms.component';
+
 
 @NgModule({
   declarations: [
@@ -45,6 +48,8 @@ import { VoyagePlanComponent } from './admin/voyage-plan/voyage-plan.component';
     ForgotpasswordComponent,
     LogoutComponent,
     VoyagePlanComponent,
+    VoyageFormsComponent,
+   
   
   ],
   imports: [
@@ -60,7 +65,8 @@ import { VoyagePlanComponent } from './admin/voyage-plan/voyage-plan.component';
     HttpClientModule,
     ReactiveFormsModule,
     MatRadioModule,
-    MatDialogModule
+    MatDialogModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

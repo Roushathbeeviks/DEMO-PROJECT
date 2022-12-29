@@ -38,20 +38,31 @@
             </a>    
     </div>
     <div class="headerBody3 color">
-        <a routerLink="/adminSignUp" class="color" >
-           <div class="logo"> <span class="material-icons">add</span></div>
-           <div class="size ">Add User</div>
-        </a>
-        <a mat-button [matMenuTriggerFor]="afterMenu" [routerLinkActive]="['active']">
+        <div>
+        <a mat-button [matMenuTriggerFor]="Menu" [routerLinkActive]="['active']">
             <div class="logo space">
+               
                 <mat-icon>drag_indicator</mat-icon>
             </div><div class="size space">View</div></a>
         <mat-menu #afterMenu="matMenu" xPosition="after">
+          <button mat-menu-item routerLink="/adminSignUp">Add user</button>
+          <button mat-menu-item routerLink="/voyageplan">Add voyage plan</button>
+          <button mat-menu-item></button>
+          <button mat-menu-item></button>
+        </mat-menu>
+        </div>
+        <div>
+        <a mat-button [matMenuTriggerFor]="afterMenu" [routerLinkActive]="['active']">
+            <div class="logo space">
+                <span class="material-icons">add</span>
+            </div><div class="size space">Add</div></a>
+        <mat-menu #Menu="matMenu" xPosition="after">
           <button mat-menu-item>View Users</button>
           <button mat-menu-item>View Assets</button>
           <button mat-menu-item>View Vessels</button>
           <button mat-menu-item>Voyage Plan</button>
         </mat-menu>
+        </div>
     </div>
     <div class="headerBody2">
         <a  class="color space">
