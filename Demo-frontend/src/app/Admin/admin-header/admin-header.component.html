@@ -1,5 +1,5 @@
 <div class="headerContainer1">
-   
+   z
     <div class="headerBody1">
             <img src="../../assets/MicrosoftTeams-image.png">&nbsp;&nbsp;&nbsp;
             <a class="color">
@@ -39,12 +39,22 @@
             
     </div>
     <div class="headerBody3 color">
-        <a routerLink="/adminSignUp" class="color">
+        <a mat-button [matMenuTriggerFor]="AddMenu" [routerLinkActive]="['active']" class="size">ADD</a>
+        <mat-menu #AddMenu="matMenu" xPosition="after">
+          <button mat-menu-item [routerLink]="['/adminSignUp']">Add Users</button>
+          <button mat-menu-item>Add Assets</button>
+          <button mat-menu-item>Add Vessels</button>
+          <button mat-menu-item> Add Voyage Plan</button>
+          
+
+        </mat-menu>
+        
+        <!-- <a routerLink="/adminSignUp" class="color">
             <div>Add User</div>
-        </a>&nbsp;&nbsp;&nbsp;
-        <a mat-button [matMenuTriggerFor]="afterMenu" [routerLinkActive]="['active']">View</a>
-        <mat-menu #afterMenu="matMenu" xPosition="after">
-          <button mat-menu-item>View Users</button>
+        </a>&nbsp;&nbsp;&nbsp; -->
+        <a mat-button [matMenuTriggerFor]="ViewMenu" [routerLinkActive]="['active']" class="size">VIEW</a>
+        <mat-menu #ViewMenu="matMenu" xPosition="after">
+          <button mat-menu-item [routerLink]="['/usermgt']">View Users</button>
           <button mat-menu-item>View Assets</button>
           <button mat-menu-item>View Vessels</button>
           <button mat-menu-item>Voyage Plan</button>
@@ -74,11 +84,14 @@
             <div><mat-icon>sms</mat-icon></div>
          </a>&nbsp;&nbsp;&nbsp;
          <a mat-button [matMenuTriggerFor]="menu" class="color">
-            <mat-icon>person</mat-icon>
+            <div class="gap"><mat-icon>person</mat-icon></div>
         </a>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item>Edit Profile</button>
+           
+           
+            <button mat-menu-item >Edit Profile</button>
             <button mat-menu-item (click)="openDialog()">Log Out</button>
+       
        </mat-menu>&nbsp;&nbsp;&nbsp;
        </div>
     

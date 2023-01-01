@@ -58,12 +58,15 @@
             <div><mat-icon>sms</mat-icon></div>
          </a>&nbsp;&nbsp;&nbsp;
          <a mat-button [matMenuTriggerFor]="menu" class="color">
-            <mat-icon>person</mat-icon>
+            <div class="gap"><mat-icon>person</mat-icon></div>
         </a>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item>Edit Profile</button>
+            <button mat-menu-item (click)="EditProfile(id)" >Edit Profile</button>
             <button mat-menu-item (click)="openDialog()">Log Out</button>
        </mat-menu>&nbsp;&nbsp;&nbsp;
     </div>
     
 </div>
+
+
+<!-- [routerLink]="['/editprofile/',{id}]" -->

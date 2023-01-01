@@ -50,13 +50,13 @@ router.get("/getlogin", function (req, res) {
 router.post("/forgotpassword", function (req, res) {
   PasswordService.ForgotPassword(req, res);
 });
- router.post("/editprofile", function (req, res) {
+ router.put("/editprofile/:id", function (req, res) {
   userService.EditUserProfile(req,res)
  })
 
 //GET USER DETAILS_ ROLE=USER
-router.get("/getusers", (req, res) => {
-  userService.GetUserDetails(req, res);
+router.get("/getuserById/:id", (req, res) => {
+  userService.GetUserById(req, res);
 });
 
 router.get("/getallusers", (req,res) => {

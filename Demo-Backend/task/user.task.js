@@ -25,21 +25,21 @@ const userTasks = {
 
 
 
-Editprofile:(Userid,firstname,lastname,email,contactnumber)=>
+Editprofile:(id,Userid,firstname,lastname,email,contactnumber)=>
       {
-
+        
         return new Promise((resolve, reject) => 
         {
-          connection.query("update users set firstname=?,lastname=?,email=?,contactnumber=? where Userid=?", 
-          [firstname,lastname,email,contactnumber,Userid],(error,results)=>
+          connection.query("update users set Userid=?, firstname=?,lastname=?,email=?,contactnumber=? where id=?", 
+          [Userid,firstname,lastname,email,contactnumber,id],(error,results)=>
           {
             if (!error)
                 if(results.affectedRows==0)
                 {
-                  console.log("User id does not exists")
+                  console.log("Error in Updates: Userid does not exists")
                 }
                 else{
-                     console.log("User exists")
+                     console.log("Updated")
                 }
                
             
@@ -99,7 +99,7 @@ getUserByEmailId: (email) => {
 
   getUserByUserid:(Userid) => {
   const param = [Userid];
-  const query="select Userid,firstname,lastname,email,contactnumber,password,role from users where Userid = ?"
+  const query="select ID,Userid,firstname,lastname,email,contactnumber,password,role from users where Userid = ?"
   return new Promise((resolve, reject) => {
     connection.query(query,param,(error,results)=>{
       if(error){

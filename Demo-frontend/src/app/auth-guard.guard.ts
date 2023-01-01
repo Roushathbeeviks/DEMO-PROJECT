@@ -15,27 +15,22 @@ import { AuthService } from './services/auth.service';
 })
 export class AuthGuardGuard implements CanActivate {
   constructor(private authserv: AuthService, private route: Router) {}
-  canActivate():boolean {
-    // console.log("true")
-    if(this.authserv.loggedIn())
-    {
-      if (localStorage.getItem('Role') == 'Admin' )
-       {
+  canActivate(): boolean {
+    if (this.authserv.loggedIn()) {
+      if (localStorage.getItem('Role') == 'Admin' || 'user') {
         return true;
-        
-      } 
-      else 
-      {
+      } else {
         localStorage.removeItem('token');
+        localStorage.removeItem('Id');
         localStorage.removeItem('username');
         localStorage.removeItem('Role');
         this.route.navigate(['']);
+        console.log('true');
         return false;
       }
-    }
-    else{
-      
+    } else {
       localStorage.removeItem('token');
+      localStorage.removeItem('Id');
       localStorage.removeItem('username');
       localStorage.removeItem('Role');
       this.route.navigate(['']);
@@ -43,5 +38,3 @@ export class AuthGuardGuard implements CanActivate {
     }
   }
 }
-
-

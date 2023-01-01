@@ -1,36 +1,37 @@
+*{
+    height: 50;
+    width: 80;
+    /* background-color: aqua; */
+}
+
 .login{
     position: relative;
     display: flex;
     flex-direction: column;
-   
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(32, 32, 104);
+    /* background-color: rgb(32, 32, 104); */
     align-items: center;
     font-size: 45px;
     /* height:100%; */
     margin:0px; 
     min-width: 450px;
-    margin-top: 0px;
     padding-top: 10%;
 }
-button{
-    align-items: center;
-}
-
-
 .btn{
     /* display: flex;
     align-items: center;
     justify-content: center; */
     background-color: rgb(58, 120, 201);
+    display: flex;
     color: aliceblue;
     border: none;
     font-size: 15px;
     min-width: 75px;
     min-height: 30px;
     align-items: center; 
-    padding-top: 3px;  
+    padding-top: 3px;
+    
 
 }
 /* .loginform{
@@ -64,29 +65,11 @@ button{
 }
 .container1{
     /* background-image: url("../../../assets/map.png"); */
-    background-color: rgb(32, 32, 104);
+    /* background-color: rgb(32, 32, 104); */
     height:100%;
     width:100%;  
     /* background-repeat: no-repeat;
     background-size:cover; */
     /* position: absolute; */
     
-}
-/* .child{
-    background-color: rgb(102, 102, 102);
-    
-} */
-/* .parent{
-    backdrop-filter: blur(10px);
-} */
-.errors{
-    padding-top: 10px;
-    padding-left: 5px;
-    color: red;
-    font-weight: 50%;
-    font-size: 15px;
-}
-.radio{
-    font-size: 15px;
-    color:aliceblue;
 }

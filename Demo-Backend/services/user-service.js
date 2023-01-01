@@ -73,10 +73,15 @@ const userService = {
     userTasks
       .getUserByUserid(user.Userid)
       .then((users) => {
-        if (users.length <= 0 || users[0].password != user.password) {
-          res.send({ message: "Invalid username or password", status: false });
-        } else if (users[0].password == user.password) {
-          const response = { userid: users[0].Userid, role: users[0].role };
+        if (users.length <= 0 ) {
+          res.send({ message: "Invalid username", status: false });
+        } 
+        else if(users[0].password != user.password)
+        {
+          res.send({ message: "Invalid password", status: false });
+        }
+        else if (users[0].password == user.password) {
+          const response = { userid: users[0].Userid, role: users[0].role ,Id:users[0].Id};
           const accesstoken = jwt.sign(response, process.env.ACCCESS_TOKEN, {
             expiresIn: "8h",
           });
@@ -88,7 +93,9 @@ const userService = {
                 token: accesstoken,
                 Detail: users[0].role,
                 status: true,
+                Id:users[0].ID
               });
+              console.log("id" ,users[0].ID)
           });
           // res.status(200).json({token: accesstoken});
           // res.status(200).json({Message:response.role})
@@ -104,10 +111,12 @@ const userService = {
       });
   },
 
-  GetUserDetails: (req, res) => {
+  GetUserById: (req, res) => {
     var query =
-      "select Userid,firstname,lastname,email,contactnumber from users where role='user'";
-    connection.query(query, (err, results) => {
+      "select Userid,firstname,lastname,email,contactnumber from users where Id=?";
+      console.log(req.params.id)
+      const id=req.params.id;
+    connection.query(query,id, (err, results) => {
       if (results) {
         // return res.status(500).json({msg:results});
         res.send({ message: results });
@@ -119,21 +128,23 @@ const userService = {
 
   EditUserProfile: (req,res)=>
   {
-    console.log(req.body)
-   const userid = req.body.Userid;
+  console.log(req.body)
+  console.log(req.params.id)
+  const id=req.params.id;
+   const newuserid = req.body.Userid;
    const newfirstname = req.body.firstname;
    const newlastname = req.body.lastname;
    const newemail = req.body.email;
    const newcontactnumber = req.body.contactnumber;
-  var X= userTasks.Editprofile(userid,newfirstname,newlastname,newemail,newcontactnumber)
+  var X= userTasks.Editprofile(id,newuserid,newfirstname,newlastname,newemail,newcontactnumber)
 
   
     if(X)
     {
-      return res.send("Updated the profile");
+      return res.json({message:"Updated the profile"});
     }
     else{
-      return res.send("Updation Failed")
+      return res.json({message:"Updation Failed"});
     }
 
   },
@@ -154,7 +165,7 @@ const userService = {
 
   GetAllDetails: (req, res) => {
     var query =
-      "select Userid,firstname,lastname,email,contactnumber,role,password from users";
+      "select Userid,firstname,lastname,email,contactnumber,role,password,Id from users where role='guest' or  role='user'";
     connection.query(query, (err, results) => {
       if (results) {
         // return res.status(500).json({msg:results});

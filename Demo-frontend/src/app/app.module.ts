@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,7 +8,6 @@ import { LandingPageComponent } from './Users/landing-page/landing-page.componen
 import { HeaderComponent } from './Users/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
-//import { AdminComponent } from './admin/admin/admin.component';
 import { AdminSignUpComponent } from './Admin/admin-sign-up/admin-sign-up.component';
 //import { AdminhomeComponent } from './Admin/adminhome/adminhome.component';
 import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
@@ -27,6 +26,14 @@ import { ForgotpasswordComponent } from './Users/forgotpassword/forgotpassword.c
 import { LogoutComponent } from './logout/logout.component';
 
 import {MatDialogModule} from '@angular/material/dialog';
+import{MatTableModule} from "@angular/material/table"
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
+import { EditprofileComponent } from './Users/editprofile/editprofile.component';
+
+import {MatButtonModule} from '@angular/material/button';
+import { NgxDatatableModule} from '@swimlane/ngx-datatable';
 
 @NgModule({
   declarations: [
@@ -43,6 +50,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     AdminHeaderComponent,
     ForgotpasswordComponent,
     LogoutComponent,
+    EditprofileComponent,
+    
+  
   
   ],
   imports: [
@@ -58,9 +68,15 @@ import {MatDialogModule} from '@angular/material/dialog';
     HttpClientModule,
     ReactiveFormsModule,
     MatRadioModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule,
+    NgxDatatableModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

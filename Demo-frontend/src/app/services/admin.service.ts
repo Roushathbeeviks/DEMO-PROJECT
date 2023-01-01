@@ -28,10 +28,15 @@ export class AdminService {
       headers: new HttpHeaders().append('Content-Type', 'application/json'),
     });
   }
+  EditProfile(id: any, data: any) {
+    return this.http.put(this.URL + `/user/editprofile/${id}`, data);
+  }
+  GetUserById(id: any) {
+    return this.http.get(this.URL + `/user/getuserById/${id}`);
+  }
 
-  GetLoginDetails()
-  {
-    return this.http.get(this.URL + '/user//getlogin')
+  GetLoginDetails() {
+    return this.http.get(this.URL + '/user/getlogin');
   }
 
   ForgotPassword(data: any) {

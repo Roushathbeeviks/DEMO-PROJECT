@@ -7,7 +7,7 @@
     height:100%;
     margin:0px; 
 }
-.btn{
+.button{
     /* display: flex;
     align-items: center;
     justify-content: center; */
@@ -16,16 +16,24 @@
     border: none;
     font-size: 10px;
     min-width: 50px;
-    min-height: 22px;
+    min-height: 25px;
     align-items: center; 
     padding-top: 2px;
 }
 /* .loginform{
     padding-top: 10px;
 } */
-
+.version{
+    color: rgb(137, 137, 192);
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+}
+a{
+    text-decoration: none;
+}
 .pass{
-    color:aliceblue;
+    /* color:aliceblue; */
     padding-left: 78%;
     font-size: 12px; 
 }

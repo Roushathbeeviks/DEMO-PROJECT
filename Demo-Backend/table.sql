@@ -10,7 +10,8 @@ create table users
     role varchar(200) NOT NULL,
     password varchar(200) NOT NULL,
     PRIMARY KEY (Userid),
-    UNIQUE(email)
+    UNIQUE(email),
+    Id INT AUTO_INCREMENT UNIQUE,
 );
 
 -- INSERT QUERY FOR USER

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   FormBuilder,
@@ -9,7 +9,6 @@ import {
 import { Validators } from '@angular/forms';
 import { SignupService } from 'src/app/services/signup.service';
 import { AdminService } from 'src/app/services/admin.service';
-
 
 @Component({
   selector: 'app-admin-sign-up',
@@ -26,6 +25,8 @@ export class AdminSignUpComponent implements OnInit {
     private route: Router,
     private formBuider: FormBuilder,
     private adminserv: AdminService,
+  
+
 
   ) {}
 
