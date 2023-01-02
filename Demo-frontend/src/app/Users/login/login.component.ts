@@ -36,15 +36,15 @@ export class LoginComponent implements OnInit {
     // this.getUsers()
   }
 
-  // getUsers() {
-  //   this.adminserv.AllUsers().subscribe((res) => {
-  //     console.log(res);
-  //     // this.arr = res.valueOf();
-  //     // console.log(res);
-  //     // this.arr=res
-  //     // console.log(typeof this.arr)
-  //   });
-  // }
+  getUsers() {
+    this.adminserv.AllUsers().subscribe((res) => {
+      console.log(res);
+      // this.arr = res.valueOf();
+      // console.log(res);
+      // this.arr=res
+      // console.log(typeof this.arr)
+    });
+  }
 
   submit() {
     var formData = this.LoginForm.value;

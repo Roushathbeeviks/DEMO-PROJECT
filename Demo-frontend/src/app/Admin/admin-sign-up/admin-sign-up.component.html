@@ -3,10 +3,10 @@
           <app-admin-header></app-admin-header>
       </div>
       <div class="login">
-        <form [formGroup]="signup" (ngSubmit)="check()" autocomplete="off">
+        <form [formGroup]="signup" (ngSubmit)="check()">
           <!-- <img style="height:50px;" src="../../assets/MicrosoftTeams-image.png"><br> -->   
             <div>
-              <input formControlName="Userid" class="input" type="text" id="Userid"   placeholder="Username" (keyup)="CheckId($event)"/>
+              <input formControlName="Userid" class="input" type="text" id="Userid"   placeholder="Username" (keypress)="CheckId($event)"/>
                 <div class="errors" *ngIf="Userid.errors?.['required'] && Userid.touched">UserID is required</div>
                 <div class="errors" *ngIf="Userid.errors?.['minlength'] && Userid.touched">User ID should have minimum length</div>
                 <div  class="errors" *ngIf="status==false">{{UsernameCheckmsg}}</div> 
@@ -31,7 +31,7 @@
                 <div class="errors" *ngIf="lastname.errors?.['pattern'] && lastname.touched">Last name cannot have numbers</div>
             </div>&nbsp;
             <div>
-              <input formControlName="email" class="input" type="email" id="email" placeholder="Email" (keyup)="CheckEmail()"/>
+              <input formControlName="email" class="input" type="email" id="email" placeholder="Email" (keypress)="CheckEmail()"/>
                 <div class="errors" *ngIf="email.errors?.['required'] && email.touched">
                 Email is required
                 </div>
@@ -74,7 +74,7 @@
                 Please assign a role
                 </div>
               </div>&nbsp;          
-            <div class="move"><button  type="submit" [disabled]="signup.invalid" class="btn">Sign Up</button></div>
+            <div class="move"><button  type="submit" [disabled]="signup.invalid" class=" btn" >Sign Up</button></div>
         </form>
     </div>
 </div>

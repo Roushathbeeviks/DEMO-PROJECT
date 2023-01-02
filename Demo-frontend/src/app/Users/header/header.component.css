@@ -21,6 +21,8 @@
 }
 .color{
     color:aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
 }
 .logo{
     display: flex;
@@ -29,7 +31,15 @@
 .size{
     font-size: 13px;
 }
-.gap
-{
-    margin-left: -40px;
+.image{
+    padding-left: 10px;
+    height: 30px;
+    align-items: center;
+    padding-top: 15px;
+}
+.space{
+    padding-left: 10px;
+}
+.size{
+    font-size: 9px;
 }

@@ -11,14 +11,8 @@
     /* height:100%; */
     margin:0px; 
     min-width: 450px;
-    margin-top: 0px;
     padding-top: 10%;
 }
-button{
-    align-items: center;
-}
-
-
 .btn{
     /* display: flex;
     align-items: center;
@@ -30,7 +24,8 @@ button{
     min-width: 75px;
     min-height: 30px;
     align-items: center; 
-    padding-top: 3px;  
+    padding-top: 3px;
+    
 
 }
 /* .loginform{

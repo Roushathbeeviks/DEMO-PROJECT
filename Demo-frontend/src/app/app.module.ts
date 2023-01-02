@@ -1,4 +1,5 @@
 import { NgModule} from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -8,6 +9,7 @@ import { LandingPageComponent } from './Users/landing-page/landing-page.componen
 import { HeaderComponent } from './Users/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
+//import { AdminComponent } from './admin/admin/admin.component';
 import { AdminSignUpComponent } from './Admin/admin-sign-up/admin-sign-up.component';
 //import { AdminhomeComponent } from './Admin/adminhome/adminhome.component';
 import { AdminHomeComponent } from './Admin/admin-home/admin-home.component';
@@ -34,6 +36,10 @@ import { EditprofileComponent } from './Users/editprofile/editprofile.component'
 
 import {MatButtonModule} from '@angular/material/button';
 import { NgxDatatableModule} from '@swimlane/ngx-datatable';
+import { VoyagePlanComponent } from './Admin/voyage-plan/voyage-plan.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import { VoyageFormsComponent } from './Admin/voyage-forms/voyage-forms.component';
+
 
 @NgModule({
   declarations: [
@@ -53,6 +59,9 @@ import { NgxDatatableModule} from '@swimlane/ngx-datatable';
     EditprofileComponent,
     
   
+    VoyagePlanComponent,
+    VoyageFormsComponent,
+   
   
   ],
   imports: [
@@ -73,7 +82,8 @@ import { NgxDatatableModule} from '@swimlane/ngx-datatable';
     NgxDatatableModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent],

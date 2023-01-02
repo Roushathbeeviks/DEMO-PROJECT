@@ -5,21 +5,24 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 var auth = require("../services/Authentication");
 var checkrole = require("../services/checkRole");
-var bcrypt = require("bcrypt");
+var bcrypt = require('bcrypt')
+
 
 const userService = {
   doCreate: (req, res) => {
     let users = req.body;
+    // console.log(users);
     userTasks
       .getUserByEmailId(users.email)
       .then((user) => {
         if (user.length > 0) {
-          res.send({ message: "User already exists" });
+          // return res.status(200).json("User already exists");
+          res.send({message:"User already exists"})
         } else {
           userTasks.insertUser(users).then((results) => {
             if (results) {
               // return res.status(200).json("User successfully added");
-              res.send({ message: "User successfully added" });
+              res.send({message:"User successfully added"})
             }
           });
         }
@@ -67,6 +70,46 @@ const userService = {
         res.send({ message: "Internal server error:" + error });
       });
   },
+
+  CheckEmail: (req, res) => {
+    let users = req.body;
+    // console.log(users);
+    userTasks
+      .getUserByEmailId(users.email)
+      .then((user) => {
+        if (user.length > 0) {
+          // return res.status(200).json("User already exists");
+          res.send({message:"Email id already exists",status:true})
+        } else {
+        res.send({message:"Email id does not exist",status:false})
+        }
+      })
+      .catch((error) => {
+        // return res.status(500).json("Internal server error:" + error);
+        res.send({message:"Internal server error:" + error})
+      });
+  },
+
+  CheckId: (req, res) => {
+    let users = req.body;
+    // console.log(users);
+    userTasks
+      .getUserByUserid(users.Userid)
+      .then((user) => {
+        if (user.length > 0) {
+          // return res.status(200).json("User already exists");
+          res.send({message:"User name already exists",status:true})
+        } else {
+        res.send({message:"User name does not exist",status:false})
+        }
+      })
+      .catch((error) => {
+        // return res.status(500).json("Internal server error:" + error);
+        res.send({message:"Internal server error:" + error})
+      });
+  },
+
+
 
   doLogin: (req, res) => {
     let user = req.body;

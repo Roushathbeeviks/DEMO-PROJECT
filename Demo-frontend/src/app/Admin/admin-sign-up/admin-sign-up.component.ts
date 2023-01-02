@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   FormBuilder,
@@ -24,16 +24,15 @@ export class AdminSignUpComponent implements OnInit {
   constructor(
     private route: Router,
     private formBuider: FormBuilder,
-    private adminserv: AdminService,
-  
-
-
+    private adminserv: AdminService
   ) {}
 
   check() {
     console.log(this.signup.value);
-    this.adminserv.SignupUser(this.signup.value).subscribe((res:any) => {
-      console.log(res.message);
+    // console.log('signed up');
+    // if()
+    this.adminserv.SignupUser(this.signup.value).subscribe((res) => {
+      // console.log(res);
     });
   }
 
@@ -68,6 +67,10 @@ export class AdminSignUpComponent implements OnInit {
     }
     )
   
+  }
+  reload()
+  {
+
   }
 
   ngOnInit(): void {
