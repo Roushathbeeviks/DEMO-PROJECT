@@ -9,25 +9,6 @@ var checkrole = require("../services/checkRole");
 const PasswordService = require("../services/PasswordService");
 const jwt = require('jsonwebtoken')
 
-
-// function verifyToken(req, res, next) {
-//   // console.log(req.headers.Authorization)
-//   if (!req.headers.authorization) {
-//       return res.status(401).send("unauthorized req")
-//   }
-//   let token = req.headers.authorization.split(' ')[1]
-//   // console.log(token);
-//   if (token == 'null') {
-//       return res.status(401).send("unauthorized req")
-//   }
-//   let payload = jwt.verify(token, 'secretkey')
-//   if (!payload) {
-//       return res.status(401).send("unauthorized req")
-//   }
-//   req.userId = payload.subject
-//   next()
-// }
-
 router.post("/signup", function (req, res) {
   userService.doCreate(req, res);
 });
@@ -64,10 +45,5 @@ router.get("/getallusers", (req,res) => {
 })
 
 
-
-// CHECK TOKEN
-// router.get("/checktoken",auth.Authentication ((req, res)=>{
-//   return res.status(200).json({message:"True"})
-// })
 
 module.exports = router;
