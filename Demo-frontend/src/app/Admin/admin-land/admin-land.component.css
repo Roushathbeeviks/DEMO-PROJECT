@@ -1,0 +1,15 @@
+.container{
+    background-image: url("../../../assets/map.png");
+    height:100%;
+    width:100%;  
+    background-repeat: no-repeat;
+    background-size:cover;
+    /* position: absolute; */
+}
+.child{
+    background-color: rgb(102, 102, 102);
+    
+}
+.parent{
+    backdrop-filter: blur(10px);
+}
