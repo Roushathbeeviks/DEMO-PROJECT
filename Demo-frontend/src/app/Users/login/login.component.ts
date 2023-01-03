@@ -7,8 +7,10 @@ import {
   Validators,
   NgForm,
 } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
+import { ForgotpasswordComponent } from '../forgotpassword/forgotpassword.component';
 import { LandingPageComponent } from '../landing-page/landing-page.component';
 
 @Component({
@@ -25,7 +27,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private route: Router,
     private adminserv: AdminService,
-    private formBuider: FormBuilder
+    private formBuider: FormBuilder,
+    private dialog:MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -76,6 +79,12 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+
+  PasswordDialog()
+  {
+    this.dialog.open(ForgotpasswordComponent,{})
+  }
+
 }
 
 // submit() {
