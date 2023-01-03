@@ -37,37 +37,20 @@
                 <div class="size">TFDC</div>
             </a>    
     </div>
-    <div class="headerBody3 color">
-        <div>
-        <a mat-button [matMenuTriggerFor]="Menu" [routerLinkActive]="['active']">
-            <div class="logo space">
-               
-                <mat-icon>drag_indicator</mat-icon>
-            </div><div class="size space">View</div></a>
-        <mat-menu #afterMenu="matMenu" xPosition="after">
-          <button mat-menu-item routerLink="/adminSignUp">Add user</button>
-          <button mat-menu-item routerLink="/voyageplan">Add voyage plan</button>
-          <button mat-menu-item></button>
-          <button mat-menu-item></button>
-        </mat-menu>
-        </div>
-        <div>
-        <a mat-button [matMenuTriggerFor]="afterMenu" [routerLinkActive]="['active']">
-            <div class="logo space">
-                <span class="material-icons">add</span>
-            </div><div class="size space">Add</div></a>
-        <mat-menu #Menu="matMenu" xPosition="after">
-          <button mat-menu-item>View Users</button>
-          <button mat-menu-item>View Assets</button>
-          <button mat-menu-item>View Vessels</button>
-          <button mat-menu-item>Voyage Plan</button>
-        </mat-menu>
-        </div>
-    </div>
     <div class="headerBody2">
         <a  class="color space">
             <div>
-                <i class="material-icons">settings</i>
+                    <a mat-button [matMenuTriggerFor]="Settings" [routerLinkActive]="['active']">
+                        <div class="logo space">
+                            <i class="material-icons">settings</i>
+                        </div></a>
+                    <mat-menu #Settings="matMenu" xPosition="after">
+                      <button mat-menu-item routerLink="/usermgt">View Users</button>
+                      <button mat-menu-item>View Assets</button>
+                      <button mat-menu-item>View Vessels</button>
+                      <button mat-menu-item>View Voyage Plan</button>
+                    </mat-menu>
+                
             </div>
         </a>
         <a href="#" class="color space">
@@ -84,11 +67,11 @@
             <div><mat-icon>sms</mat-icon></div>
          </a>
          <a mat-button [matMenuTriggerFor]="menu" class="color space">
-            <mat-icon>person</mat-icon>
+           <div> <mat-icon>person</mat-icon></div>
         </a>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item>Edit Profile</button>
-            <button mat-menu-item (click)="openDialog()">Log Out</button>
+            <button mat-menu-item (click)="EditDialog()">Edit Profile</button>
+            <button mat-menu-item (click)="LogoutDialog()">Log Out</button>
        </mat-menu>&nbsp;&nbsp;&nbsp;
        </div>
     
