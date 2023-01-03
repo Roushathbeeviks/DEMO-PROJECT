@@ -31,6 +31,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import{MatTableModule} from "@angular/material/table"
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import {MatCardModule} from '@angular/material/card';
 
 import { EditprofileComponent } from './Users/editprofile/editprofile.component';
 
@@ -83,7 +84,8 @@ import { VoyageFormsComponent } from './Admin/voyage-forms/voyage-forms.componen
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatStepperModule
+    MatStepperModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent],

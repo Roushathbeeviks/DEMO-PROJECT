@@ -31,7 +31,7 @@ export class HeaderComponent implements OnInit {
     this.check=true;
   }
 
-  EditProfile(id:any)
+  EditDialog(id:any)
   {
     this.id=localStorage.getItem('Id') 
     // this.router.navigate(['/editprofile',this.id])
@@ -42,7 +42,9 @@ export class HeaderComponent implements OnInit {
       
     })
   }
-  openDialog(){
+
+
+  LogoutDialog(){
     this.dialog.open(LogoutComponent, {
       
         

@@ -40,9 +40,6 @@
     </div>
     <div class="headerBody2">
         <a href="#" class="color space">
-            <div>
-                <i class="material-icons">settings</i>
-            </div>
         </a>
         <a href="#" class="color space">
             <div>
@@ -61,8 +58,8 @@
             <mat-icon>person</mat-icon>
         </a>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item>Edit Profile</button>
-            <button mat-menu-item (click)="openDialog()">Log Out</button>
+            <button mat-menu-item (click)="EditDialog(id)">Edit Profile</button>
+            <button mat-menu-item (click)="LogoutDialog()">Log Out</button>
        </mat-menu>
     </div>
     
