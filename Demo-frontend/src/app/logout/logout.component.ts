@@ -11,5 +11,12 @@ export class LogoutComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  LogoutUser()
+  {
+    localStorage.removeItem('token');
+    localStorage.removeItem('Id');
+    localStorage.removeItem('username');
+    localStorage.removeItem('Role');
+  }
 
 }

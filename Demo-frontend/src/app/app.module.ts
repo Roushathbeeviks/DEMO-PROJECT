@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
+
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +28,14 @@ import { ForgotpasswordComponent } from './Users/forgotpassword/forgotpassword.c
 import { LogoutComponent } from './logout/logout.component';
 
 import {MatDialogModule} from '@angular/material/dialog';
+import{MatTableModule} from "@angular/material/table"
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
+import { EditprofileComponent } from './Users/editprofile/editprofile.component';
+
+import {MatButtonModule} from '@angular/material/button';
+import { NgxDatatableModule} from '@swimlane/ngx-datatable';
 import { VoyagePlanComponent } from './Admin/voyage-plan/voyage-plan.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { VoyageFormsComponent } from './Admin/voyage-forms/voyage-forms.component';
@@ -47,6 +56,9 @@ import { VoyageFormsComponent } from './Admin/voyage-forms/voyage-forms.componen
     AdminHeaderComponent,
     ForgotpasswordComponent,
     LogoutComponent,
+    EditprofileComponent,
+    
+  
     VoyagePlanComponent,
     VoyageFormsComponent,
    
@@ -66,9 +78,15 @@ import { VoyageFormsComponent } from './Admin/voyage-forms/voyage-forms.componen
     ReactiveFormsModule,
     MatRadioModule,
     MatDialogModule,
+    MatButtonModule,
+    NgxDatatableModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     MatStepperModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }

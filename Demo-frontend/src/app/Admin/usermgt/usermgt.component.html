@@ -1,0 +1,35 @@
+
+<div class="d-grid gap-2 col-1 mx-auto">
+    <button type="button" class="btn btn-primary p-1"><i class="bi bi-plus"></i>Create</button>
+    </div>
+    
+    <table  class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col"><i class="fa fa-sort">First name</i></th>
+            <th scope="col">Last name</th>
+            <th scope="col" ><i class="fa fa-sort">Age</i></th>
+            <th scope="col">phone</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+         <tbody> 
+            <tr *ngFor="let List of employeeArray">
+             <td >{{ List.firstname}}</td> 
+             <td>{{ List.lastname }}</td> 
+             <td>{{ List.age }}
+            <td>{{List.phone }}</td> 
+            <td>
+              <a href="#" class="btn"><i class='fas fa-eye view'></i></a>
+              <a  class="btn" ><i class="fa fa-edit edit"></i></a>
+              <a  class="btn"><i class="bi bi-trash"></i></a>
+         <!-- <button type="button" (click)="deleteEmployeeConfirmation(employee)" class="btn"><i class='fas fa-trash-alt delete'></i></button>  -->
+           </td>
+          </tr>
+          <!-- <tr>
+            <td *ngIf="employeeList.length == 0" colspan="6">No Employee Found</td>
+          </tr> 
+        </tr> -->
+        </tbody>
+      </table>
+    

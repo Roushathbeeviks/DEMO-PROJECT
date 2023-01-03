@@ -1,0 +1,34 @@
+
+<div class="container1">
+  <div class="login">
+    <form [formGroup]="Editprofile" (ngSubmit)="check()" autocomplete="off">
+      <!-- <img style="height:50px;" src="../../assets/MicrosoftTeams-image.png"><br> -->   
+        <div>
+          <input formControlName="Userid" class="input" type="text" id="Userid"/>
+          
+        </div>&nbsp; 
+       
+               
+        <div>
+           <input formControlName="firstname" class="input" type="text" id="firstname" placeholder="First Name"/>
+           
+        </div>&nbsp;
+        <div>
+          <input formControlName="lastname" class="input" type="text" id="lastname" placeholder="Last Name"/>
+
+        </div>&nbsp;
+        <div>
+          <input formControlName="email" class="input" type="email" id="email" placeholder="Email"/>
+            
+        </div>&nbsp;
+       
+        <div>
+          <input formControlName="contactnumber" class="input" type="number" id="contactnumber" placeholder="Contact Number"/>
+      
+        </div>&nbsp;   
+        <button  mat-dialog-close mat-button>Cancel</button>
+        <div class="move"><button  type="submit" mat-button >SAVE</button></div>
+      
+    </form>
+</div>
+</div>

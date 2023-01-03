@@ -14,29 +14,35 @@ export class AdminService {
     return this.http.post(this.URL + '/user/signup', data);
   }
 
-CheckEmail(data:any)
-{
-  return this.http.post(this.URL +'/user/Checkemail',data)
-}
+  CheckEmail(data: any) {
+    return this.http.post(this.URL + '/user/Checkemail', data);
+  }
 
-CheckId(data:any)
-{
-  return this.http.post(this.URL +'/user/CheckId',data)
-}
+  CheckId(data: any) {
+    return this.http.post(this.URL + '/user/CheckId', data);
+  }
 
-  Login(data:any){
-    return this.http.post(this.URL +'/user/login',data,{
+  Login(data: any) {
+    return this.http.post(this.URL + '/user/login', data, {
       observe: 'body',
-      headers: new HttpHeaders().append('Content-Type', 'application/json')
+      headers: new HttpHeaders().append('Content-Type', 'application/json'),
     });
   }
-
-  ForgotPassword(data:any)
-  {
-    return this.http.post(this.URL+'/user/forgotpassword',data);
+  EditProfile(id: any, data: any) {
+    return this.http.put(this.URL + `/user/editprofile/${id}`, data);
   }
-  AllUsers()
-  {
-    return this.http.get(this.URL+'/user/getallusers')
+  GetUserById(id: any) {
+    return this.http.get(this.URL + `/user/getuserById/${id}`);
+  }
+
+  GetLoginDetails() {
+    return this.http.get(this.URL + '/user/getlogin');
+  }
+
+  ForgotPassword(data: any) {
+    return this.http.post(this.URL + '/user/forgotpassword', data);
+  }
+  AllUsers() {
+    return this.http.get(this.URL + '/user/getallusers');
   }
 }

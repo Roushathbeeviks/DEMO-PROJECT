@@ -29,7 +29,45 @@ const userService = {
       })
       .catch((error) => {
         // return res.status(500).json("Internal server error:" + error);
-        res.send({message:"Internal server error:" + error})
+        res.send({ message: "Internal server error:" + error });
+      });
+  },
+
+  CheckEmail: (req, res) => {
+    let users = req.body;
+    // console.log(users);
+    userTasks
+      .getUserByEmailId(users.email)
+      .then((user) => {
+        if (user.length > 0) {
+          // return res.status(200).json("User already exists");
+          res.send({ message: "Email id already exists", status: true });
+        } else {
+          res.send({ message: "Email id does not exist", status: false });
+        }
+      })
+      .catch((error) => {
+        // return res.status(500).json("Internal server error:" + error);
+        res.send({ message: "Internal server error:" + error });
+      });
+  },
+
+  CheckId: (req, res) => {
+    let users = req.body;
+    // console.log(users);
+    userTasks
+      .getUserByUserid(users.Userid)
+      .then((user) => {
+        if (user.length > 0) {
+          // return res.status(200).json("User already exists");
+          res.send({ message: "User name already exists", status: true });
+        } else {
+          res.send({ message: "User name does not exist", status: false });
+        }
+      })
+      .catch((error) => {
+        // return res.status(500).json("Internal server error:" + error);
+        res.send({ message: "Internal server error:" + error });
       });
   },
 
@@ -78,62 +116,109 @@ const userService = {
     userTasks
       .getUserByUserid(user.Userid)
       .then((users) => {
-        // console.log(users);
-        if (users.length <= 0 || users[0].password != user.password) {
-          // return res
-          //   .status(401)
-          //   .json({Message:"Incorrect Username or password"});
-          res.send({message:"Invalid username or password",status:false})
-        } else if (users[0].password == user.password) {
-          const response = { userid: users[0].Userid, role: users[0].role };
+        if (users.length <= 0 ) {
+          res.send({ message: "Invalid username", status: false });
+        } 
+        else if(users[0].password != user.password)
+        {
+          res.send({ message: "Invalid password", status: false });
+        }
+        else if (users[0].password == user.password) {
+          const response = { userid: users[0].Userid, role: users[0].role ,Id:users[0].Id};
           const accesstoken = jwt.sign(response, process.env.ACCCESS_TOKEN, {
             expiresIn: "8h",
           });
           userTasks.getUserByUserid(response.userid).then((users) => {
-            console.log(users);
-            res.status(200).json({token: accesstoken,Detail:users[0].role,status:true});
-          })
-            // res.status(200).json({token: accesstoken});
-            // res.status(200).json({Message:response.role})
-            console.log(users[0].role)
+            // console.log(users);
+            res
+              .status(200)
+              .json({
+                token: accesstoken,
+                Detail: users[0].role,
+                status: true,
+                Id:users[0].ID
+              });
+              console.log("id" ,users[0].ID)
+          });
+          // res.status(200).json({token: accesstoken});
+          // res.status(200).json({Message:response.role})
+          // console.log(users[0].role)
         } else {
-          res.send({message: "something went wrong"})
+          res.send({ message: "something went wrong" });
           // return res.status(400).json({ Message: "something went wrong" });
         }
       })
       .catch((error) => {
         // return res.status(500).json("Internal server error:" + error);
-        res.send({message: "Internal server error:" + error})
+        res.send({ message: "Internal server error:" + error });
       });
   },
-  
 
-  GetUserDetails: (req, res) => {
+  GetUserById: (req, res) => {
     var query =
-      "select Userid,firstname,lastname,email,contactnumber from users where role='user'";
-    connection.query(query, (err, results) => {
+      "select Userid,firstname,lastname,email,contactnumber from users where Id=?";
+      console.log(req.params.id)
+      const id=req.params.id;
+    connection.query(query,id, (err, results) => {
       if (results) {
         // return res.status(500).json({msg:results});
-        res.send({message:results})
+        res.send({ message: results });
       } else {
-        res.send({message:err})
+        res.send({ message: err });
       }
     });
   },
 
-GetAllDetails:(req, res)=>
-{
-  var query = "select Userid,firstname,lastname,email,contactnumber,role,password from users";
-  connection.query(query, (err, results) => {
-    if (results) {
-      // return res.status(500).json({msg:results});
-      res.send({message:results});
-    } else {
-      // return res.status(200).json(err);
-      res.send(err)
+  EditUserProfile: (req,res)=>
+  {
+  console.log(req.body)
+  console.log(req.params.id)
+  const id=req.params.id;
+   const newuserid = req.body.Userid;
+   const newfirstname = req.body.firstname;
+   const newlastname = req.body.lastname;
+   const newemail = req.body.email;
+   const newcontactnumber = req.body.contactnumber;
+  var X= userTasks.Editprofile(id,newuserid,newfirstname,newlastname,newemail,newcontactnumber)
+
+  
+    if(X)
+    {
+      return res.json({message:"Updated the profile"});
     }
-  });
-},
-}
+    else{
+      return res.json({message:"Updation Failed"});
+    }
+
+  },
+
+
+  GetRole: (req, res) => {
+    var query = "select role from users";
+    connection.query(query, (err, results) => {
+      if (results) {
+        // return res.status(500).json({msg:results});
+        res.send({ message: results });
+      } else {
+        // return res.status(200).json(err);
+        res.send(err);
+      }
+    });
+  },
+
+  GetAllDetails: (req, res) => {
+    var query =
+      "select Userid,firstname,lastname,email,contactnumber,role,password,Id from users where role='guest' or  role='user'";
+    connection.query(query, (err, results) => {
+      if (results) {
+        // return res.status(500).json({msg:results});
+        res.send({ message: results });
+      } else {
+        // return res.status(200).json(err);
+        res.send(err);
+      }
+    });
+  },
+};
 
 module.exports = userService;
