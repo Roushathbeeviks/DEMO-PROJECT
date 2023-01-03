@@ -35,7 +35,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { EditprofileComponent } from './Users/editprofile/editprofile.component';
 
 import {MatButtonModule} from '@angular/material/button';
-import { NgxDatatableModule} from '@swimlane/ngx-datatable';
+// import { NgxDatatableModule} from '@swimlane/ngx-datatable';
 import { VoyagePlanComponent } from './Admin/voyage-plan/voyage-plan.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { VoyageFormsComponent } from './Admin/voyage-forms/voyage-forms.component';
@@ -79,7 +79,7 @@ import { VoyageFormsComponent } from './Admin/voyage-forms/voyage-forms.componen
     MatRadioModule,
     MatDialogModule,
     MatButtonModule,
-    NgxDatatableModule,
+    // NgxDatatableModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
