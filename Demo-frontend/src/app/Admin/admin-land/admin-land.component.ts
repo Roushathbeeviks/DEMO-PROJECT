@@ -12,5 +12,8 @@ export class AdminLandComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  navigate()
+  {
+    this.route.navigate(['/vessel']);
+  }
 }

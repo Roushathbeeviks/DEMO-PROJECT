@@ -68,10 +68,6 @@ export class AdminSignUpComponent implements OnInit {
     )
   
   }
-  reload()
-  {
-
-  }
 
   ngOnInit(): void {
     this.signup = this.formBuider.group({

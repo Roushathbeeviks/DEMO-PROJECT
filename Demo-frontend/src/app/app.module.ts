@@ -32,14 +32,19 @@ import{MatTableModule} from "@angular/material/table"
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatCardModule} from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
 
 import { EditprofileComponent } from './Users/editprofile/editprofile.component';
-
 import {MatButtonModule} from '@angular/material/button';
 import { NgxDatatableModule} from '@swimlane/ngx-datatable';
 import { VoyagePlanComponent } from './Admin/voyage-plan/voyage-plan.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { VoyageFormsComponent } from './Admin/voyage-forms/voyage-forms.component';
+import { VesselListComponent } from './Vessel/vessel-list/vessel-list.component';
+import { AssetListComponent } from './Admin/asset-list/asset-list.component';
+
+import { VesselHeaderComponent } from './Vessel/vessel-header/vessel-header.component';
+import { VesselLandComponent } from './Vessel/vessel-land/vessel-land.component';
 
 
 @NgModule({
@@ -62,6 +67,10 @@ import { VoyageFormsComponent } from './Admin/voyage-forms/voyage-forms.componen
   
     VoyagePlanComponent,
     VoyageFormsComponent,
+    VesselListComponent,
+    AssetListComponent,
+    VesselHeaderComponent,
+    VesselLandComponent,
    
   
   ],
@@ -85,7 +94,10 @@ import { VoyageFormsComponent } from './Admin/voyage-forms/voyage-forms.componen
     MatPaginatorModule,
     MatSortModule,
     MatStepperModule,
-    MatCardModule
+    MatCardModule,
+    MatSelectModule,
+
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

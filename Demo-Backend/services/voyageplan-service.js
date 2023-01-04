@@ -1,7 +1,7 @@
 const connection = require("../db/connection");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
-var auth = require("../services/Authentication");
+var auth = require("./Authentication");
 var VoyageTAsks = require("../task/voyage.task");
 
 const VoyagePlan = {
