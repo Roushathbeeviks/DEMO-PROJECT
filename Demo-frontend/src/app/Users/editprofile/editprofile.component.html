@@ -1,34 +1,41 @@
+<!-- <mat-dialog-container> -->
 
-<div class="container1">
   <div class="login">
     <form [formGroup]="Editprofile" (ngSubmit)="check()" autocomplete="off">
       <!-- <img style="height:50px;" src="../../assets/MicrosoftTeams-image.png"><br> -->   
-        <div>
+        <div class="LabIn">
+          <label class="inputLabel">User id</label>
           <input formControlName="Userid" class="input" type="text" id="Userid"/>
-          
         </div>&nbsp; 
        
                
-        <div>
+        <div  class="LabIn">
+          <label class="inputLabel">First Name</label>
            <input formControlName="firstname" class="input" type="text" id="firstname" placeholder="First Name"/>
            
         </div>&nbsp;
-        <div>
+        <div  class="LabIn">
+          <label class="inputLabel">Last Name</label>
           <input formControlName="lastname" class="input" type="text" id="lastname" placeholder="Last Name"/>
 
         </div>&nbsp;
-        <div>
+        <div  class="LabIn"> 
+          <label class="inputLabel">Email</label>
           <input formControlName="email" class="input" type="email" id="email" placeholder="Email"/>
             
         </div>&nbsp;
        
-        <div>
+        <div  class="LabIn">
+          <label class="inputLabel">Contact</label>
           <input formControlName="contactnumber" class="input" type="number" id="contactnumber" placeholder="Contact Number"/>
       
         </div>&nbsp;   
-        <button  mat-dialog-close mat-button>Cancel</button>
-        <div class="move"><button  type="submit" mat-button >SAVE</button></div>
+        
+        <div class="buttons">
+          <button  mat-dialog-close mat-button class="btnC">Cancel</button>
+          <button  type="submit" mat-button class="btn" >SAVE</button>
+        </div>
       
     </form>
 </div>
-</div>
+<!-- </mat-dialog-container> -->
