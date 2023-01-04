@@ -36,11 +36,11 @@ import {MatSelectModule} from '@angular/material/select';
 
 import { EditprofileComponent } from './Users/editprofile/editprofile.component';
 import {MatButtonModule} from '@angular/material/button';
-import { NgxDatatableModule} from '@swimlane/ngx-datatable';
+// import { NgxDatatableModule} from '@swimlane/ngx-datatable';
 import { VoyagePlanComponent } from './Admin/voyage-plan/voyage-plan.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { VoyageFormsComponent } from './Admin/voyage-forms/voyage-forms.component';
-import { VesselListComponent } from './Vessel/vessel-list/vessel-list.component';
+import { VesselListComponent } from './Admin/vessel-list/vessel-list.component';
 import { AssetListComponent } from './Admin/asset-list/asset-list.component';
 
 import { VesselHeaderComponent } from './Vessel/vessel-header/vessel-header.component';
@@ -89,7 +89,7 @@ import { VesselLandComponent } from './Vessel/vessel-land/vessel-land.component'
     MatRadioModule,
     MatDialogModule,
     MatButtonModule,
-    NgxDatatableModule,
+    // NgxDatatableModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,

@@ -5,7 +5,7 @@ import { AdminLandComponent } from './Admin/admin-land/admin-land.component';
 import { AdminSignUpComponent } from './Admin/admin-sign-up/admin-sign-up.component';
 import { AssetListComponent } from './Admin/asset-list/asset-list.component';
 import { UsermgtComponent } from './Admin/user-mgt/usermgt.component';
-import { VesselListComponent } from './Vessel/vessel-list/vessel-list.component';
+import { VesselListComponent } from './Admin/vessel-list/vessel-list.component';
 import { VoyagePlanComponent } from './Admin/voyage-plan/voyage-plan.component';
 import { ForgotpasswordComponent } from './Users/forgotpassword/forgotpassword.component';
 import { HeaderComponent } from './Users/header/header.component';

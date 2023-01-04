@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { VesselListComponent } from '../vessel-list/vessel-list.component';
+import { VesselListComponent } from '../../Admin/vessel-list/vessel-list.component';
 
 @Component({
   selector: 'app-vessel-land',
