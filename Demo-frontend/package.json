@@ -24,6 +24,7 @@
     "@ng-select/ng-select": "^10.0.1",
     "@swimlane/ngx-datatable": "^20.1.0",
     "bootstrap": "^5.2.3",
+    "ng-multiselect-dropdown": "^0.3.9",
     "ngx-bootstrap": "^10.2.0",
     "ngx-datatable": "^1.0.3",
     "ngx-toastr": "^16.0.1",

@@ -75,13 +75,13 @@ create table vessels(
     VesselType varchar(255) NOT NULL,
     flag varchar(255) NOT NULL,
     VesselId INT AUTO_INCREMENT UNIQUE,
-    VoyageId varchar(255) NOT NULL ,
-    assetId varchar(255) NOT NULL 
+    -- VoyageId varchar(255) NOT NULL ,
+    -- assetId varchar(255) NOT NULL 
 )
 
 --INSERT INTO VESSEL FORM
 
-insert into vessels( VesselName ,IMONumber, VesselType,flag,VesselId)values('ATHIRA1 VESSEL','123WE','BULK CARRIER','JAPAN','1','V1','A1');
+insert into vessels( VesselName ,IMONumber, VesselType,flag,VesselId)values('ATHIRA1 VESSEL','123WE','BULK CARRIER','JAPAN','1');
 
 --CREATE FLAG DB
 create table flags(
