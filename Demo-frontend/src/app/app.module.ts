@@ -45,6 +45,7 @@ import { AssetListComponent } from './Admin/asset-list/asset-list.component';
 
 import { VesselHeaderComponent } from './Vessel/vessel-header/vessel-header.component';
 import { VesselLandComponent } from './Vessel/vessel-land/vessel-land.component';
+// import { NgImageSliderModule } from 'ng-image-slider';
 
 
 @NgModule({
@@ -96,6 +97,7 @@ import { VesselLandComponent } from './Vessel/vessel-land/vessel-land.component'
     MatStepperModule,
     MatCardModule,
     MatSelectModule,
+    // NgImageSliderModule
 
     
   ],

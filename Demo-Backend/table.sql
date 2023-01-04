@@ -70,18 +70,16 @@ insert into voyagepath( StartPortname,DestinationPortname)values('Japan','China'
 --CRETAE VESSEL FORM
 
 create table vessels(
-    VesselName varchar(255) NOT NULL UNIQUE,
-    IMONumber varchar(255) NOT NULL,
-    VesselType varchar(255) NOT NULL,
-    flag varchar(255) NOT NULL,
-    VesselId INT AUTO_INCREMENT UNIQUE,
-    VoyageId varchar(255) NOT NULL ,
-    assetId varchar(255) NOT NULL 
-)
+    VesselName varchar(250) NOT NULL UNIQUE,
+    IMONumber varchar(250) NOT NULL,
+    VesselType varchar(250) NOT NULL,
+    flag varchar(250) NOT NULL,
+    VesselId INT AUTO_INCREMENT UNIQUE  
+);
 
 --INSERT INTO VESSEL FORM
 
-insert into vessels( VesselName ,IMONumber, VesselType,flag,VesselId)values('ATHIRA1 VESSEL','123WE','BULK CARRIER','JAPAN','1','V1','A1');
+insert into vessels( VesselName ,IMONumber, VesselType,flag,VesselId)values('ATHIRA1 VESSEL','123WE','BULK CARRIER','JAPAN','1');
 
 --CREATE FLAG DB
 create table flags(
