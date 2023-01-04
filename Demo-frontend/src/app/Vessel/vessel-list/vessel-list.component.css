@@ -42,3 +42,11 @@ label
 input.ng-invalid.ng-touched {
     border-bottom:  red 1px solid;
 }
+option
+{
+    text-transform: uppercase;
+}
+.move{
+    display: flex;
+    justify-content: space-between;
+}

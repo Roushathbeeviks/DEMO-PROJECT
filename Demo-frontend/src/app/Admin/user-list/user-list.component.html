@@ -1,0 +1,98 @@
+<div class="child">
+  <div class="parent">
+    <app-vessel-header></app-vessel-header>
+  </div>
+</div>
+<div class="container1">
+  <div class="container2">
+    <div class="heading">
+      USER MANAGEMENT
+      <div class="importButton">
+        <button class="btnColor" (click)="navigate()">ADD USERS</button>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <ngx-datatable
+      style="height: auto"
+      class="bootstrap"
+      [rows]="rows"
+      [columns]="columns"
+      fixed-header
+      datatable-header
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [limit]="10"
+      [columnMode]="'standard'"
+      [reorderable]="false">
+      <ngx-datatable-column
+        name="firstname"
+        prop="firstname"
+        [width]="150"
+        [sortable]="true">
+        <ng-template let-column="column" ngx-datatable-header-template>First Name</ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column
+        name="lastname"
+        prop="lastname"
+        [width]="150"
+        [sortable]="true"
+      >
+        <ng-template let-column="column" ngx-datatable-header-template>Last Name</ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column
+        name="Userid"
+        prop="Userid"
+        [width]="150"
+        [sortable]="true">
+        <ng-template let-column="column" ngx-datatable-header-template>User Id</ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column
+        name="email"
+        prop="email"
+        [width]="150"
+        [sortable]="true">
+        <ng-template let-column="column" ngx-datatable-header-template>Email id</ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column
+        name="contactnumber"
+        prop="contactnumber"
+        [width]="150"
+        [sortable]="true">
+        <ng-template let-column="column" ngx-datatable-header-template>Contact No</ng-template>
+      </ngx-datatable-column>
+
+      <ngx-datatable-column
+        name="Actions"
+        [minWidth]="150"
+        [flexGrow]="3"
+        [sortable]="false"
+        [resizeable]="false"
+        [draggable]="false"
+        prop="edit" >
+        <ng-template
+          let-row="row"
+          let-value="value"
+          ngx-datatable-cell-template >
+          <span
+            md-icon-button
+            placement="left"
+            ngbTooltip=""
+            [routerLink]="['/edit/', row.Userid]">
+            <mat-icon>delete</mat-icon>
+            <mat-icon [routerLink]="['']">build</mat-icon>
+          </span>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Vessel Mapping">
+        <ng-template let-row="row"
+        let-value="value"
+        ngx-datatable-cell-template>
+            <span><mat-icon (click)="Addvessel(row.Userid)">add_box</mat-icon></span>
+            
+        </ng-template>
+    </ngx-datatable-column>    
+    </ngx-datatable>
+  </div>
+</div>

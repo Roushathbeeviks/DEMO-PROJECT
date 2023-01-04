@@ -19,6 +19,7 @@
     min-height: 25px;
     align-items: center; 
     padding-top: 2px;
+    cursor: pointer;
 }
 /* .loginform{
     padding-top: 10px;
@@ -39,4 +40,7 @@ a{
 }
 input.ng-invalid.ng-touched {
     border-bottom:  red 1px solid;
+}
+.pointer {
+    cursor: pointer;
 }
