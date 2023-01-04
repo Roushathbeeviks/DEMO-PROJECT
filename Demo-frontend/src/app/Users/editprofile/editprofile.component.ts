@@ -46,9 +46,7 @@ export class EditprofileComponent implements OnInit {
     lastname:res.message[0].lastname,
     email:res.message[0].email,
     contactnumber:res.message[0].contactnumber
-   })
- 
-
+   }) 
    })
 
     this.Editprofile = this.formBuider.group({

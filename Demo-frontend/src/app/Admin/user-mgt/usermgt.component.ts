@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ColumnMode } from '@swimlane/ngx-datatable';
+// import { ColumnMode } from '@swimlane/ngx-datatable';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class UsermgtComponent implements OnInit {
 rows:any[]=[]
 columnMode='standard';
 columns = [];
-ColumnMode = ColumnMode;
+// ColumnMode = ColumnMode;
 // displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 dataSource: any;
 

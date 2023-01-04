@@ -20,10 +20,10 @@ export class AdminHeaderComponent implements OnInit {
   {
     this.id=localStorage.getItem('Id') 
     this.dialog.open(EditprofileComponent, {
+    
       data: {
         data: this.id,
-      }
-      
+      },
     })
   }
   LogoutDialog(){

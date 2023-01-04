@@ -1,20 +1,26 @@
 .headerContainer1{
     display: flex;
-    max-height: 10%;
     backdrop-filter: blur(50px) saturate(120%) contrast(200%);
+    justify-content: space-between;
+    flex-wrap: wrap;
     
 }
 .headerBody1{
     display: flex;
     justify-content: space-between;
-    padding-left: 10px;
-    padding-top: 10px;
+    align-content: center;
+    flex-wrap: wrap;
+    gap:12px;
+    
 }
 .headerBody2{
-    padding-left: 24%;
-    padding-top: 14px;
+  
+    
     display: flex;
     justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    gap:10px;
     
     /* font-weight: 900;
     font-size: larger; */
@@ -34,17 +40,42 @@
 .logo{
     display: flex;
     text-align: center;
+    justify-content: center;
 }
 .size{
     font-size: 9px;
 }
 .image{
+    display: flex;
+    justify-content: center;
+    align-content: center;
     padding-left: 10px;
-    height: 30px;
-    align-items: center;
-    padding-top: 15px;
     
+   ;
 }
-.space{
-    padding-left: 10px;
+
+
+.mat-button{
+    padding: 0px;
+}
+.set{
+    max-width: 45px;
+}
+.tab1{
+    display: flex;
+    align-items: center;
+    gap:12px;
+}
+.mat-icon{
+    padding: 0px;
+}
+.set2{
+    width: 5px;
+}
+.set3{
+    display: flex;
+    align-items: center;
+}
+.mat-button{
+    width:10px;
 }

@@ -1,7 +1,11 @@
 <div class="headerContainer1">
-    <img class="image" src="../../assets/MicrosoftTeams-image.png">&nbsp;&nbsp;&nbsp;
-   
-    <div class="headerBody1">
+   <div class="headerBody1">
+    <div class="image">
+        <div style="display:flex;align-items:center">
+            <img  src="../../assets/MicrosoftTeams-image.png">
+        </div>
+    </div>
+    <div class="tab1">
             <a class="color space">
                 <div class="logo">
                     <i class="material-icons">travel_explore</i>
@@ -36,12 +40,14 @@
                 <div class="logo"><i class="material-icons">thermostat</i></div>
                 <div class="size">TFDC</div>
             </a>    
+        </div>
     </div>
-    <div class="headerBody2">
-        <a  class="color space">
-            <div>
+       
+        <div class="headerBody2">
+        <a  class="color ">
+            <div class="set">
                     <a mat-button [matMenuTriggerFor]="Settings" [routerLinkActive]="['active']">
-                        <div class="logo space">
+                        <div class="">
                             <i class="material-icons">settings</i>
                         </div></a>
                     <mat-menu #Settings="matMenu" xPosition="after">
@@ -53,26 +59,27 @@
                 
             </div>
         </a>
-        <a href="#" class="color space">
+        <a href="#" class="color">
             <div>
                 <i class="material-icons">search</i>
             </div>
         </a>
-        <a href="#" class="color space">
+        <a href="#" class="color ">
             <div>
                 <mat-icon>help_outline</mat-icon>
             </div>
         </a>
-        <a  routerLinkActive="active" href="#" class="color space">
+        <a  routerLinkActive="active" href="#" class="color ">
             <div><mat-icon>sms</mat-icon></div>
          </a>
-         <a mat-button [matMenuTriggerFor]="menu" class="color space">
-           <div> <mat-icon>person</mat-icon></div>
+         <a mat-button [matMenuTriggerFor]="menu" class="color ">
+           <div class="set2"> <mat-icon>person</mat-icon></div>
         </a>
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="EditDialog()">Edit Profile</button>
             <button mat-menu-item (click)="LogoutDialog()">Log Out</button>
        </mat-menu>&nbsp;&nbsp;&nbsp;
+       
        </div>
     
 </div>
