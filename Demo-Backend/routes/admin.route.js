@@ -25,6 +25,9 @@ router.post("/vesselform",function (req, res) {
 router.get("/getvessel/:id", function (req, res) {
   Vessel. GetVesselByVesselId(req,res);
 });
+router.get("/getallvessel", function (req,res) {
+  Vessel.GetAllVessels(req,res)
+});
 router.get("/getflag", function (req, res) {
   Vessel.GetVesselFlag(req,res);
 })

@@ -2,7 +2,7 @@
     display: flex;
     max-height: 10%;
     backdrop-filter: blur(50px) saturate(120%) contrast(200%);
-    background-color: black;
+    
 }
 .headerBody1{
     display: flex;

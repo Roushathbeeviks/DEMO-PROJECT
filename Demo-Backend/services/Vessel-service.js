@@ -38,7 +38,24 @@ const Vessel={
             }
         })
     },
-   
+    GetAllVessels:(req,res)=>
+    {
+        var query = "select * from vessels"
+        connection.query(query, function(err,results)
+        {
+            if(results)
+            {
+                res.send(results);
+                console.log(results);
+            }
+            else
+            {
+                res.send(err);
+                console.log(err);
+                
+            }
+        })
+    },
     GetVesselFlag:(req,res)=>
     {
         var query = "select * from flags"
