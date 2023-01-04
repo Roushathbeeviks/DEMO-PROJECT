@@ -8,9 +8,9 @@
     <div class="tab1">
             <a class="color space">
                 <div class="logo">
-                    <i class="material-icons">travel_explore</i>
+                    <i class="material-icons" routerLink="/adminLand">travel_explore</i>
                 </div>
-                <div class="size">MY FLEET</div>
+                <div class="size" routerLink="/adminLand">MY FLEET</div>
             </a>
             <a class="color space" >
                  <div class="logo"> <i class="material-icons">analytics</i></div>
@@ -52,9 +52,7 @@
                         </div></a>
                     <mat-menu #Settings="matMenu" xPosition="after">
                       <button mat-menu-item routerLink="/usermgt">View Users</button>
-                      <button mat-menu-item>View Assets</button>
-                      <button mat-menu-item>View Vessels</button>
-                      <button mat-menu-item>View Voyage Plan</button>
+                      <button mat-menu-item routerLink="/vessel">View Vessels</button>
                     </mat-menu>
                 
             </div>

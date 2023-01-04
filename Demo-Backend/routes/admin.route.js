@@ -4,7 +4,8 @@ const userService = require("../services/user-service");
 const connection = require("../db/connection");
 const userTasks = require("../task/user.task");
 var auth = require("../services/Authentication");
-const VoyagePlan = require("../services/voyageplan");
+const VoyagePlan = require("../services/voyageplan-service");
+const Vessel = require("../services/Vessel-service");
 
 router.post("/voyageplan", function (req, res) {
   VoyagePlan.VoyagePlanForm(req, res);
@@ -18,5 +19,13 @@ router.post("/voyagepath", function (req, res) {
 router.get("/voyagepath", function (req, res) {
   VoyagePlan.GetVoyagePath(req, res);
 });
-
+router.post("/vesselform",function (req, res) {
+ Vessel.VesselForm(req,res)
+});
+router.get("/getvessel/:id", function (req, res) {
+  Vessel. GetVesselByVesselId(req,res);
+});
+router.get("/getflag", function (req, res) {
+  Vessel.GetVesselFlag(req,res);
+})
 module.exports = router;

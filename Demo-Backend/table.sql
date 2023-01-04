@@ -20,6 +20,7 @@ INSERT INTO users(userid,firstname,lastname,email,contactnumber,role,password)
 values('admin.a','admin','admin','admin123@gmail.com','9898976554','admin','admin@123');
 
 
+
 -- CREATE QUERY FOR VOYAGE PLAN
 
 create table voyageplan
@@ -64,3 +65,28 @@ create table voyagepath(
 
 -- INSERT QUERY FOR VOYAGE PATH
 insert into voyagepath( StartPortname,DestinationPortname)values('Japan','China');
+
+
+--CRETAE VESSEL FORM
+
+create table vessels(
+    VesselName varchar(255) NOT NULL UNIQUE,
+    IMONumber varchar(255) NOT NULL,
+    VesselType varchar(255) NOT NULL,
+    flag varchar(255) NOT NULL,
+    VesselId INT AUTO_INCREMENT UNIQUE,
+    VoyageId varchar(255) NOT NULL ,
+    assetId varchar(255) NOT NULL 
+)
+
+--INSERT INTO VESSEL FORM
+
+insert into vessels( VesselName ,IMONumber, VesselType,flag,VesselId)values('ATHIRA1 VESSEL','123WE','BULK CARRIER','JAPAN','1','V1','A1');
+
+--CREATE FLAG DB
+create table flags(
+    FlagId INT AUTO_INCREMENT UNIQUE,
+    flagname varchar (255) NOT NULL
+);
+
+insert into flags(FlagId,flagname)values('1','japan');
