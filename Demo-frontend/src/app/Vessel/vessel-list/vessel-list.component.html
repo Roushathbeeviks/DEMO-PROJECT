@@ -30,7 +30,7 @@
             <option value="Chemical Tanker">Chemical Tanker</option>
           </select>
         </div>
-        <div class="errors" *ngIf="VesselType.errors?.['required'] && VesselType.touched">required</div>
+        <div class="errors" *ngIf="VesselType.errors?.['required'] && VesselType.touched" style="color:red;">required</div>
         
         <div class="flag">
           <label>Flag<span style="color:red;">*</span></label>
@@ -38,8 +38,9 @@
           <option value="">Select Flag</option>
           <option *ngFor="let flag of Vesselflag">{{flag.flagname }}</option>
           </select>
-          <div class="errors" *ngIf="flag.errors?.['required'] && flag.touched">required</div>
+          
       </div>
+      <div class="errors" *ngIf="flag.errors?.['required'] && flag.touched" style="color:red;">required</div>
  </div>
  <div mat-dialog-actions class="move">
   <button   mat-dialog-close mat-button >NO,cancel</button>

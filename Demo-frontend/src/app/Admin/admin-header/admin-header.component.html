@@ -1,18 +1,12 @@
 <div class="headerContainer1">
    <div class="headerBody1">
-    <div class="image">
-        <div style="display:flex;align-items:center">
-            <img  src="../../assets/MicrosoftTeams-image.png">
-        </div>
-    </div>
-    <div class="tab1">
-            <a class="color space">
+            <img class="image" src="../../assets/MicrosoftTeams-image.png">  
+            <a class="color ">
                 <div class="logo">
                     <i class="material-icons" routerLink="/adminLand">travel_explore</i>
                 </div>
                 <div class="size" routerLink="/adminLand">MY FLEET</div>
             </a>
-        </div>
     </div>
         <div class="headerBody2">
         <a  class="color ">
@@ -41,7 +35,7 @@
             <div><mat-icon>sms</mat-icon></div>
          </a>
          <a mat-button [matMenuTriggerFor]="menu" class="color ">
-           <div class="set2"> <mat-icon>person</mat-icon></div>
+            <mat-icon>person</mat-icon>
         </a>
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="EditDialog()">Edit Profile</button>

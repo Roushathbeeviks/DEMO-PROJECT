@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ColumnMode } from '@swimlane/ngx-datatable';
+// import { ColumnMode } from '@swimlane/ngx-datatable';
 import { AdminService } from 'src/app/services/admin.service';
 
 export interface PeriodicElement {
@@ -33,7 +33,7 @@ export class UsermgtComponent implements OnInit {
 // rows:any[]=[]
 columnMode='standard';
 // columns = [];
-ColumnMode = ColumnMode;
+// ColumnMode = ColumnMode;
 
 displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
 dataSource = ELEMENT_DATA;
