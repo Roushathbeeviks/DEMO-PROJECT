@@ -76,6 +76,7 @@ img{
   padding-right: 10px;
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 10px;
+  cursor: pointer;
 }
 .text{
   color: white;

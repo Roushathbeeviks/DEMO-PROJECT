@@ -33,19 +33,19 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
-
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { EditprofileComponent } from './Users/editprofile/editprofile.component';
 import {MatButtonModule} from '@angular/material/button';
-// import { NgxDatatableModule} from '@swimlane/ngx-datatable';
+import { NgxDatatableModule} from '@swimlane/ngx-datatable';
 import { VoyagePlanComponent } from './Admin/voyage-plan/voyage-plan.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { VoyageFormsComponent } from './Admin/voyage-forms/voyage-forms.component';
-import { VesselListComponent } from './Admin/vessel-list/vessel-list.component';
+import { VesselListComponent } from './Vessel/vessel-list/vessel-list.component';
 import { AssetListComponent } from './Admin/asset-list/asset-list.component';
-
 import { VesselHeaderComponent } from './Vessel/vessel-header/vessel-header.component';
 import { VesselLandComponent } from './Vessel/vessel-land/vessel-land.component';
-// import { NgImageSliderModule } from 'ng-image-slider';
+import { UserListComponent } from './Admin/user-list/user-list.component';
+import { VesselMappingComponent } from './Vessel/vessel-mapping/vessel-mapping.component';
 
 
 @NgModule({
@@ -64,14 +64,14 @@ import { VesselLandComponent } from './Vessel/vessel-land/vessel-land.component'
     ForgotpasswordComponent,
     LogoutComponent,
     EditprofileComponent,
-    
-  
     VoyagePlanComponent,
     VoyageFormsComponent,
     VesselListComponent,
     AssetListComponent,
     VesselHeaderComponent,
     VesselLandComponent,
+    UserListComponent,
+    VesselMappingComponent,
    
   
   ],
@@ -90,14 +90,14 @@ import { VesselLandComponent } from './Vessel/vessel-land/vessel-land.component'
     MatRadioModule,
     MatDialogModule,
     MatButtonModule,
-    // NgxDatatableModule,
+    NgxDatatableModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
     MatStepperModule,
     MatCardModule,
     MatSelectModule,
-    // NgImageSliderModule
+    NgMultiSelectDropDownModule.forRoot(),
 
     
   ],

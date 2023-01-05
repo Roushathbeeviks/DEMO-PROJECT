@@ -1,48 +1,13 @@
 <div class="headerContainer1">
    <div class="headerBody1">
-    <div class="image">
-        <div style="display:flex;align-items:center">
-            <img  src="../../assets/MicrosoftTeams-image.png">
-        </div>
-    </div>
-    <div class="tab1">
-            <a class="color space">
+            <img class="image" src="../../assets/MicrosoftTeams-image.png">  
+            <a class="color ">
                 <div class="logo">
                     <i class="material-icons" routerLink="/adminLand">travel_explore</i>
                 </div>
                 <div class="size" routerLink="/adminLand">MY FLEET</div>
             </a>
-            <a class="color space" >
-                 <div class="logo"> <i class="material-icons">analytics</i></div>
-                 <div class="size">SMART ANALYTICS</div>
-            </a>
-            <a class="color space ">
-                <div class="logo"><i class="material-icons">class</i></div>
-                <div class="size">CHARTER PARTY</div>
-            </a>
-            <a class="color space">
-                <div class="logo"><i class="material-icons">class</i></div>
-                <div class="size">CPQ</div>
-            </a>
-            <a class="color space">
-                <div class="logo"><i class="material-icons">precision_manufacturing</i></div>
-                <div class="size">HULL PERFORMANCE</div>
-            </a>
-            <a class="color space">
-                <div class="logo"><i class="material-icons">share_location</i></div>
-                <div class="size">GEOFENCING</div>
-            </a>
-            <a class="color space">
-                <div class="logo"><i class="material-icons">psychology_alt</i></div>
-                <div class="size">ASSET AI</div>
-            </a>
-            <a  class="color space">
-                <div class="logo"><i class="material-icons">thermostat</i></div>
-                <div class="size">TFDC</div>
-            </a>    
-        </div>
     </div>
-       
         <div class="headerBody2">
         <a  class="color ">
             <div class="set">
@@ -53,8 +18,7 @@
                     <mat-menu #Settings="matMenu" xPosition="after">
                       <button mat-menu-item routerLink="/usermgt">View Users</button>
                       <button mat-menu-item routerLink="/vessel">View Vessels</button>
-                    </mat-menu>
-                
+                    </mat-menu>  
             </div>
         </a>
         <a href="#" class="color">
@@ -71,7 +35,7 @@
             <div><mat-icon>sms</mat-icon></div>
          </a>
          <a mat-button [matMenuTriggerFor]="menu" class="color ">
-           <div class="set2"> <mat-icon>person</mat-icon></div>
+            <mat-icon>person</mat-icon>
         </a>
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="EditDialog()">Edit Profile</button>

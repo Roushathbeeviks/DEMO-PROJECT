@@ -34,8 +34,8 @@ export class AdminSignUpComponent implements OnInit {
     this.adminserv.SignupUser(this.signup.value).subscribe((res) => {
       // console.log(res);
     });
+     this.route.navigate(['/usermgt'])
   }
-
   CheckEmail()
   {
     this.adminserv.CheckEmail(this.signup.value).subscribe((res:any) => {
@@ -66,6 +66,7 @@ export class AdminSignUpComponent implements OnInit {
       }
     }
     )
+   
   
   }
 
