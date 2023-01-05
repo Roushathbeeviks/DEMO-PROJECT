@@ -23,7 +23,7 @@ export class AdminSignUpComponent implements OnInit {
 
   constructor(
     private route: Router,
-    private formBuider: FormBuilder,
+    private formBuilder: FormBuilder,
     private adminserv: AdminService
   ) {}
 
@@ -71,7 +71,7 @@ export class AdminSignUpComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.signup = this.formBuider.group({
+    this.signup = this.formBuilder.group({
       Userid: ['', [Validators.required, Validators.minLength(2)]],
       firstname: [
         '',

@@ -90,3 +90,11 @@ create table flags(
 );
 
 insert into flags(FlagId,flagname)values('1','japan');
+
+--CREATE VESSELMAPPING TABLE
+
+create table vesselmapping( Userid varchar(200) NOT NULL,VesselName varchar(200) NOT NULL,VesselId INT AUTO_INCREMENT UNIQUE);
+
+--INSERT IN TO vesselmapping
+
+insert into vesselmapping(Userid,VesselName,VesselId) values('Riswana.e','ATHIRA1 VESSEL,ATHIRA2 VESSEL','1');

@@ -1,6 +1,18 @@
 
-
-    <ng-multiselect-dropdown
+<h3 mat-dialog-title>CHOOSE THE VESSELS</h3>
+    <form [formGroup]="VesselMappingForm">
+        <mat-input formControlName="Userid">{{id}}</mat-input>
+        
+       
+         <ng-multiselect-dropdown
         [settings]="dropdownSettings"
-        [data]="dropdownList">
+        [data]="dropdownList" formControlName="VesselName">
     </ng-multiselect-dropdown>
+    </form>
+
+   
+
+    <div mat-dialog-actions>
+        <button mat-button [mat-dialog-close]>CANCEL</button>
+        <button mat-button (click)="Save()">SAVE</button>
+    </div>

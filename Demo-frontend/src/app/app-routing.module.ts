@@ -17,7 +17,7 @@ import { UserListComponent } from './Admin/user-list/user-list.component';
 
 const routes: Routes = [
 {path:'',component:LoginComponent},
-{path:'land',component:LandingPageComponent},
+{path:'land',component:LandingPageComponent,canActivate:[]},
 {path:'adminLand',component:AdminLandComponent},
 {path:'adminHeader',component:AdminHeaderComponent},
 {path:'adminSignUp',component:AdminSignUpComponent},

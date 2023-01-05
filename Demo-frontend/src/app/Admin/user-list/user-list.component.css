@@ -43,3 +43,7 @@ table {
 .parent{
     backdrop-filter: blur(10px);
 }
+
+element.style {
+    transform: none;
+}

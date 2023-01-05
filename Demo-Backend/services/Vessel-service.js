@@ -74,6 +74,41 @@ const Vessel={
         }
         )
         
+    },
+    VesselMap:(req,res)=>
+    {
+        let data=req.body;
+        VesselTask.insertVesselMapping(data).then((err,result)=>
+        {
+            if(result)
+            {
+                res.send({ message:result });
+            }
+            else
+            {
+                res.send({ message:err});
+                
+            }
+        })
+
+    },
+    GetVesselMapping:(req,res)=>
+    {
+        var query = "select * from vesselmapping where Userid=? ";
+        connection.query(query,[req.params.id], function(err,results)
+        {
+            if(results)
+            {
+                res.send(results);
+                console.log(results);
+            }
+            else
+            {
+                res.send(err);
+                console.log(err);
+                
+            }
+        })
     }
 }
 
