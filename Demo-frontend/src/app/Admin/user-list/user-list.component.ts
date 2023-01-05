@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ColumnMode } from '@swimlane/ngx-datatable';
 import { AdminService } from 'src/app/services/admin.service';
+import { VesselMappingService } from 'src/app/services/vessel-mapping.service';
 import { VesselMappingComponent } from 'src/app/Vessel/vessel-mapping/vessel-mapping.component';
 
 @Component({
@@ -15,8 +16,9 @@ rows:any[]=[]
 columnMode='standard';
 columns = [];
 ColumnMode = ColumnMode;
-id:any
-  constructor(private adminserv:AdminService,private route:Router,private dialog:MatDialog) { }
+Userid:any
+var:string=""
+  constructor(private adminserv:AdminService,private route:Router,private dialog:MatDialog,private vesselmap:VesselMappingService) { }
 
   ngOnInit(): void {
     this.adminserv.AllUsers().subscribe((res:any)=>
@@ -33,7 +35,13 @@ id:any
   }
   Addvessel(id:any)
   {
-    this.dialog.open(VesselMappingComponent,{})
+    
+    this.Userid = id;
+    this.vesselmap.updateApprovalMessage(this.Userid)
+    
+    this.dialog.open(VesselMappingComponent,{
+      height: '250px',
+      width: '500px',})
   }
 
 }

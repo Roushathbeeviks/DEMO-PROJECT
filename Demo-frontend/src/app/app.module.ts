@@ -22,11 +22,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import{ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import {MatRadioModule} from '@angular/material/radio';
-import { ForgotpasswordComponent } from './Users/forgotpassword/forgotpassword.component';
-import { LogoutComponent } from './logout/logout.component';
-
 import {MatDialogModule} from '@angular/material/dialog';
 import{MatTableModule} from "@angular/material/table"
 import { MatPaginatorModule } from '@angular/material/paginator';
@@ -34,6 +30,10 @@ import { MatSortModule } from '@angular/material/sort';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { FormsModule } from '@angular/forms';
+
+import { ForgotpasswordComponent } from './Users/forgotpassword/forgotpassword.component';
+import { LogoutComponent } from './logout/logout.component';
 import { EditprofileComponent } from './Users/editprofile/editprofile.component';
 import {MatButtonModule} from '@angular/material/button';
 import { NgxDatatableModule} from '@swimlane/ngx-datatable';
@@ -98,6 +98,7 @@ import { VesselMappingComponent } from './Vessel/vessel-mapping/vessel-mapping.c
     MatCardModule,
     MatSelectModule,
     NgMultiSelectDropDownModule.forRoot(),
+    FormsModule
 
     
   ],

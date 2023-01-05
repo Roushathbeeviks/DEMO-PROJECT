@@ -21,6 +21,23 @@ const VesselTask=
                  resolve(result)   
             })
         })
+    },
+    insertVesselMapping:(values)=>
+    {
+        const query ="INSERT INTO vesselmapping (Userid,VesselName)values (?,?)";
+        const param=[
+            values.Userid,
+            values.VesselName]
+            return new Promise((resolve,reject)=>
+            {
+                connection.query(query,param,function(err,result)
+                {
+                    if(err)
+                        reject(err);
+                     resolve(result)   
+                })
+            })
+
     }
 }
 

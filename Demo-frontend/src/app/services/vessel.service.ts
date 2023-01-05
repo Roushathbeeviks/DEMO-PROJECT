@@ -25,4 +25,6 @@ GetAllFlags()
 {
   return this.http.get(this.URL +'/admin/getflag')
 }
+
+
 }

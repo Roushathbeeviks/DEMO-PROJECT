@@ -30,5 +30,12 @@ router.get("/getallvessel", function (req,res) {
 });
 router.get("/getflag", function (req, res) {
   Vessel.GetVesselFlag(req,res);
+});
+router.post("/vesselmapping", function (req, res) {
+  Vessel.VesselMap(req,res);
 })
+router.get("/getvesselmapping/:id", function (req,res) {
+  Vessel.GetVesselMapping(req,res);
+});
+
 module.exports = router;
